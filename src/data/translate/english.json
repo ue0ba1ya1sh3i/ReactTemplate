@@ -1,0 +1,21 @@
+{
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+
+    "notFound": {
+      "title": "Page not found"
+    },
+
+    "settings": {
+      "title": "Settings"
+    },
+
+    "welcome": {
+      "title": "Unique template"
+    }
+  },
+
+  "title": "Template"
+}

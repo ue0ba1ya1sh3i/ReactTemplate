@@ -3,8 +3,8 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
 // Import translation datas
-import english from "../translate/english.json";
-import japanese from "../translate/japanese.json";
+import english from "../data/translate/english.json";
+import japanese from "../data/translate/japanese.json";
 
 // Set resources
 const resources = {

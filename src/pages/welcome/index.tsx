@@ -4,13 +4,15 @@ import { translate_use, title_set } from "../../utils/";
 
 function App() {
   // Settings
-  title_set(translate_use("page.home.title"));
+  title_set(translate_use("pages.welcome.title"));
 
   console.log(tailwind);
 
   return (
     <>
-      {translate_use("page.home.title")}
+      <div className={tailwind.page.welcome.main.main}>
+        <p className={tailwind.page.welcome.main.title}>{translate_use("pages.welcome.title")}</p>
+      </div>
     </>
   );
 };

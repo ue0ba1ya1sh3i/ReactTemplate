@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "home": {
+      "title": "ホーム"
+    },
+    "notFound": {
+      "title": "ページが見つかりませんでした"
+    },
+
+    "settings": {
+      "title": "設定"
+    },
+
+    "welcome": {
+      "title": "ユニークなテンプレート"
+    }
+  },
+
+  "title": "テンプレート"
+}

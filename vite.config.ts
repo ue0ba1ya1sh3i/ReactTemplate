@@ -1,10 +1,10 @@
 // Import librarys
-import svgr from 'vite-plugin-svgr';
-import React from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
-import { VitePWA as pwa } from "vite-plugin-pwa"
+import plugin_svgr from 'vite-plugin-svgr';
+import plugin_react from "@vitejs/plugin-react-swc";
+import { defineConfig as settings } from "vite";
+import { VitePWA as plugin_pwa } from "vite-plugin-pwa"
 
-export default defineConfig({
+export default settings({
 	build: {
 		chunkSizeWarningLimit: 1000,
 		minify: 'terser',
@@ -33,10 +33,10 @@ export default defineConfig({
 	},
 
 	plugins: [
-		svgr(),
-		React(),
+		plugin_svgr(),
+		plugin_react(),
 
-		pwa({
+		plugin_pwa({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
 
@@ -54,8 +54,6 @@ export default defineConfig({
 				// Start URL
 				start_url: "/",
 				scope: "/",
-
-				// Display
 				display: "standalone",
 				orientation: "natural",
 
@@ -84,13 +82,29 @@ export default defineConfig({
 			},
 
 			workbox: {
+				cleanupOutdatedCaches: true,
+				globPatterns: ["**/*"],
+
 				globIgnores: [
 					"sw.js",
-					"workbox-*.js"
+					"workbox-*.js",
+					"**/*.map"
 				],
 
-				globPatterns: [
-					"**/*.{js,css,html,ico,png,svg}"
+				runtimeCaching: [
+					{
+						handler: 'StaleWhileRevalidate',
+						urlPattern: /.*/,
+
+						options: {
+							cacheName: 'files',
+
+							expiration: {
+								maxAgeSeconds: 60 * 60 * 24 * 365 * 10,	// 10 years
+								maxEntries: 1000
+							}
+						}
+					}
 				]
 			}
 		})

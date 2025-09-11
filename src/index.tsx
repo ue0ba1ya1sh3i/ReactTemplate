@@ -8,10 +8,10 @@ import { FirstVisit } from "./components";
 import "./css/index.css";
 
 // Set route
-import Route_home from "./page/home";
-import Route_settings from "./page/settings";
-import Route_welcome from "./page/welcome";
-import Route_notfound from "./page/notFound";
+import Route_home from "./pages/home";
+import Route_settings from "./pages/settings";
+import Route_welcome from "./pages/welcome";
+import Route_notfound from "./pages/notFound";
 
 // App providers
 function App_providers({ children }: { children: React.ReactNode }) {
