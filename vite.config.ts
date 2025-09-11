@@ -2,7 +2,7 @@
 import svgr from 'vite-plugin-svgr';
 import React from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa"
+import { VitePWA as pwa } from "vite-plugin-pwa"
 
 export default defineConfig({
 	build: {
@@ -27,19 +27,16 @@ export default defineConfig({
 		}
 	},
 
-	// Server
 	server: {
 		host: '0.0.0.0',
 		port: 5173
 	},
 
-	// Plugins
 	plugins: [
 		svgr(),
 		React(),
-		
-		// PWA
-		VitePWA({
+
+		pwa({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
 
@@ -87,13 +84,13 @@ export default defineConfig({
 			},
 
 			workbox: {
-				globPatterns: [
-					"**/*.{js,css,html,ico,png,svg}"
-				],
-
 				globIgnores: [
 					"sw.js",
 					"workbox-*.js"
+				],
+
+				globPatterns: [
+					"**/*.{js,css,html,ico,png,svg}"
 				]
 			}
 		})
