@@ -1,6 +1,7 @@
 // Imports
 import { tailwind } from "../../css/tailwind/";
 import { translate_use, title_set } from "../../utils/";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   // Settings
@@ -8,9 +9,17 @@ function App() {
 
   console.log(tailwind);
 
+  const navigate = useNavigate();
+
+  const handle = () => {
+    localStorage.removeItem("firstVisit");
+    navigate("/welcome");
+  };
+
   return (
     <>
       {translate_use("pages.home.title")}
+      <button onClick={handle}>{translate_use("pages.home.return_button")}</button>
     </>
   );
 };

@@ -9,7 +9,7 @@ function FirstVisit({ children }: FirstVisitProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const visited = localStorage.getItem("first_visit");
+    const visited = localStorage.getItem("firstVisit");
 
     if (!visited) {
       navigate("/welcome", { replace: true });

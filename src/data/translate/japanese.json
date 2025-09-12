@@ -1,7 +1,8 @@
 {
   "pages": {
     "home": {
-      "title": "ホーム"
+      "title": "ホーム",
+      "return_button": "紹介ページに戻る"
     },
     "notFound": {
       "title": "ページが見つかりませんでした"
@@ -12,7 +13,10 @@
     },
 
     "welcome": {
-      "title": "ユニークなテンプレート"
+      "title": {
+        "main": "ユニークなテンプレート",
+        "button": "始める"
+      }
     }
   },
 
