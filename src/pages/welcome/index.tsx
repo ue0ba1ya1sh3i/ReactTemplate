@@ -18,10 +18,8 @@ function App() {
 
   return (
     <>
-      <div className={tailwind.page.welcome.main.main}>
-        <p className={tailwind.page.welcome.main.title}>{translate_use("pages.welcome.title.main")}</p>
-        <button onClick={handle}>{translate_use("pages.welcome.title.button")}</button>
-      </div>
+      <p>{translate_use("pages.welcome.title.main")}</p>
+      <button onClick={handle}>{translate_use("pages.welcome.title.button")}</button>
     </>
   );
 };

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: "class",
   plugins: [require("flowbite/plugin")],
@@ -11,15 +12,6 @@ module.exports = {
 
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['"Noto Sans JP"', '"Noto Sans"', 'sans-serif'],
-      },
-
-      fontWeight: {
-        thin: 100,
-        normal: 400,
-        bold: 700
-      },
-    },
-  },
-};
+    }
+  }
+}
