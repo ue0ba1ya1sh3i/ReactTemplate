@@ -44,7 +44,7 @@ export default settings({
 			registerType: "autoUpdate",
 
 			includeAssets: [
-				"favicon/*",
+				"favicons/*",
 				"index.html"
 			],
 
@@ -64,21 +64,21 @@ export default settings({
 					{
 						"purpose": "any maskable",
 						"sizes": "96x96",
-						"src": "/favicon/x96.png",
+						"src": "/favicons/x96.png",
 						"type": "image/png"
 					},
 
 					{
 						"purpose": "any maskable",
 						"sizes": "192x192",
-						"src": "/favicon/x192.png",
+						"src": "/favicons/x192.png",
 						"type": "image/png"
 					},
 
 					{
 						"purpose": "any maskable",
 						"sizes": "512x512",
-						"src": "/favicon/x512.png",
+						"src": "/favicons/x512.png",
 						"type": "image/png"
 					}
 				]

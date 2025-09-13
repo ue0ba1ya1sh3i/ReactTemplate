@@ -14,9 +14,17 @@
     },
 
     "welcome": {
-      "title": {
-          "main": "Unique template",
-          "button": "Start"
+      "title": "Template",
+
+      "header": {
+        "title": "Template",
+        "navigation": "All services"
+      },
+
+      "hero": {
+        "title": "Simple and powerful templates",
+        "subTitle": "This template has all the features and design you need.",
+        "button": "Get Started"
       }
     }
   },

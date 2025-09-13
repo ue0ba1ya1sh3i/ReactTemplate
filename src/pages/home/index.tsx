@@ -12,7 +12,6 @@ function App() {
   const navigate = useNavigate();
 
   const handle = () => {
-    localStorage.removeItem("firstVisit");
     navigate("/welcome");
   };
 

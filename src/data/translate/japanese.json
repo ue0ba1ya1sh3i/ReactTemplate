@@ -13,10 +13,33 @@
     },
 
     "welcome": {
-      "title": {
-        "main": "ユニークなテンプレート",
+      "title": "テンプレート",
+
+      "header": {
+        "title": "テンプレート",
+        "navigation": "すべてのサービス"
+      },
+
+      "hero": {
+        "title": "シンプルで強力なテンプレート",
+        "subTitle": "これは必要な機能やデザインが揃ったテンプレートです。",
         "button": "始める"
-      }
+      },
+
+      "features": [
+        {
+          "title": "シンプル",
+          "subTitle": "とてもシンプルなシステムとデザイン"
+        },
+        {
+          "title": "強力",
+          "subTitle": ""
+        },
+        {
+          "title": "スピーディー",
+          "subTitle": ""
+        }
+      ]
     }
   },
 
