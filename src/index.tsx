@@ -1,44 +1,66 @@
-// Import components & modules
-import { StrictMode, Suspense } from "react";
+// Librarys
 import { createRoot } from "react-dom/client";
+
+// Set librarys
+const librarys = {
+  react: {
+    create: createRoot
+  }
+}
+
+// Components
+import pages from "./components/pages";
+import { StrictMode, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FirstVisit } from "./components";
 
-// Import files
+// Set componets
+const Components = {
+  pages,
+  
+  handmade: {
+    firstVisit: FirstVisit
+  },
+
+  react: {
+    strict: StrictMode,
+    suspense: Suspense
+  },
+
+  router: {
+    router: BrowserRouter,
+    routes: Routes,
+    route: Route
+  }
+}
+
+// Files
 import "./css/index.css";
 
-// Set route
-import Route_home from "./pages/home";
-import Route_settings from "./pages/settings";
-import Route_welcome from "./pages/welcome";
-import Route_notfound from "./pages/notFound";
-
-// App providers
-function App_providers({ children }: { children: React.ReactNode }) {
+function Settings({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <FirstVisit>
+      <Components.handmade.firstVisit>
         {children}
-      </FirstVisit>
+      </Components.handmade.firstVisit>
     </>
   );
 };
 
-// Render settings
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App_providers>
-        <Suspense>
+librarys.react.create(document.getElementById("root")!).render(
+  <Components.react.strict>
+    <Components.router.router>
+      <Settings>
+        <Components.react.suspense>
           <Routes>
             {/* Only */}
-            <Route path="/" element={<Route_home />} />
-            <Route path="/settings" element={<Route_settings />} />
-            <Route path="/welcome" element={<Route_welcome />} />
-            <Route path="*" element={<Route_notfound />} />
+            <Route path="/" element={<Components.pages.home />} />
+            <Route path="/settings" element={<Components.pages.settings />} />
+            <Route path="/welcome" element={<Components.pages.welcome />} />
+            <Route path="*" element={<Components.pages.notFound />} />
           </Routes>
-        </Suspense>
-      </App_providers>
-    </BrowserRouter>
-  </StrictMode>
+        </Components.react.suspense>
+      </Settings>
+    </Components.router.router>
+  </Components.react.strict>
 );

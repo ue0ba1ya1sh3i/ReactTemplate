@@ -1,10 +1,14 @@
-// Import library
+// Library
 import { defineConfig as settings } from "vite";
 
-// Import plugins
-import plugin_svgr from 'vite-plugin-svgr';
-import plugin_react from "@vitejs/plugin-react-swc";
-import { VitePWA as plugin_pwa } from "vite-plugin-pwa"
+// Plugins
+import react from "@vitejs/plugin-react-swc";
+import { VitePWA } from "vite-plugin-pwa"
+
+const plugin = {
+  react: react,
+  pwa: VitePWA,
+};
 
 export default settings({
 	build: {
@@ -13,7 +17,6 @@ export default settings({
 		sourcemap: true,
 
 		rollupOptions: {
-			// Chunk
 			output: {
 				assetFileNames: 'assets/[name].[hash].[ext]',
 				chunkFileNames: 'assets/[name].[hash].js',
@@ -36,10 +39,9 @@ export default settings({
 	},
 
 	plugins: [
-		plugin_svgr(),
-		plugin_react(),
+		plugin.react(),
 
-		plugin_pwa({
+		plugin.pwa({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
 
@@ -59,6 +61,10 @@ export default settings({
 				scope: "/",
 				display: "standalone",
 				orientation: "any",
+
+				// Background
+				theme_color: "#4F46E5",
+				background_color: "#f9fafb",
 
 				icons: [
 					{
@@ -91,7 +97,7 @@ export default settings({
 				globIgnores: [
 					"sw.js",
 					"workbox-*.js",
-					"*.map"
+					"**/*.{map,mp4,zip,mp3,pdf}"
 				],
 
 				runtimeCaching: [
@@ -99,7 +105,7 @@ export default settings({
 						urlPattern: /^https:\/\/template-ue0ba1ya1sh3i\.web\.app\/.*/,
 						handler: 'StaleWhileRevalidate',
 						options: {
-							cacheName: 'app-files',
+							cacheName: 'local',
 							expiration: {
 								maxAgeSeconds: 60 * 60 * 24 * 30, // 1 month
 								maxEntries: 1000

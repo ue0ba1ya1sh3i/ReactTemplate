@@ -1,45 +1,47 @@
 {
-  "pages": {
-    "home": {
-      "title": "ホーム",
-      "return_button": "紹介ページに戻る"
-    },
-    "notFound": {
-      "title": "ページが見つかりませんでした"
-    },
+  "conponents": {
+    "pages": {
+      "home": {
+        "title": "ホーム",
+        "return_button": "紹介ページに戻る"
+      },
+      "notFound": {
+        "title": "ページが見つかりませんでした"
+      },
 
-    "settings": {
-      "title": "設定"
-    },
+      "settings": {
+        "title": "設定"
+      },
 
-    "welcome": {
-      "title": "テンプレート",
-
-      "header": {
+      "welcome": {
         "title": "テンプレート",
-        "navigation": "すべてのサービス"
-      },
 
-      "hero": {
-        "title": "シンプルで強力なテンプレート",
-        "subTitle": "これは必要な機能やデザインが揃ったテンプレートです。",
-        "button": "始める"
-      },
+        "header": {
+          "title": "テンプレート",
+          "navigation": "すべてのサービス"
+        },
 
-      "features": [
-        {
-          "title": "シンプル",
-          "subTitle": "とてもシンプルなシステムとデザイン"
+        "hero": {
+          "title": "シンプルで強力なテンプレート",
+          "subTitle": "これは必要な機能やデザインが揃ったテンプレートです。",
+          "button": "始める"
         },
-        {
-          "title": "強力",
-          "subTitle": ""
-        },
-        {
-          "title": "スピーディー",
-          "subTitle": ""
-        }
-      ]
+
+        "features": [
+          {
+            "title": "シンプル",
+            "subTitle": "とてもシンプルなシステムとデザイン"
+          },
+          {
+            "title": "強力",
+            "subTitle": ""
+          },
+          {
+            "title": "スピーディー",
+            "subTitle": ""
+          }
+        ]
+      }
     }
   },
 

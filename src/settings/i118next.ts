@@ -1,18 +1,18 @@
-// Import modules
+// Modules
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// Import translation datas
+// Data
 import english from "../data/translate/english.json";
 import japanese from "../data/translate/japanese.json";
 
-// Set resources
+// Resources
 const resources = {
   ja: { translation: japanese },
   en: { translation: english }
 } as const;
 
-// Set storage & Get system language
+// Get language
 const language_storage = localStorage.getItem("language");
 const language_system = navigator.language.split("-")[0];
 

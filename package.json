@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
+  "author": "Arata Uebayashi",
   "description": "This is a my unique template",
   "keywords": [
     "template",
     "unique"
   ],
-  "author": "Arata Uebayashi",
   "scripts": {
     "dev": "vite",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
@@ -20,8 +20,6 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "firebase": "^11.10.0",
-    "flowbite": "^3.1.2",
-    "flowbite-react": "^0.12.9",
     "i18next": "^25.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

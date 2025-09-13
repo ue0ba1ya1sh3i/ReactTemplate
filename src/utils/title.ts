@@ -1,5 +1,9 @@
-import { translate_use } from "./"
+import utils from "./"
 
-export const title_set = (title: string) => {
-  document.title = `${translate_use("title")} | ${title}`;
+const set = (name: string) => {
+  const path = `components.pages.${name}.title`;
+
+  document.title = `${utils.translate.use("title")} | ${utils.translate.use(path)}`;
 };
+
+export { set }
