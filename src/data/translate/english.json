@@ -26,7 +26,24 @@
           "title": "Simple and powerful templates",
           "subTitle": "This template has all the features and design you need.",
           "button": "Get Started"
-        }
+        },
+
+        "features": [
+          {
+            "title": "Simple",
+            "subTitle": "Very simple system and design"
+          },
+
+          {
+            "title": "Powerful",
+            "subTitle": "Well-designed code"
+          },
+
+          {
+            "title": "Speedy",
+            "subTitle": "Speed with Vite"
+          }
+        ]
       }
     }
   },

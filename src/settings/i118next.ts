@@ -1,5 +1,5 @@
 // Modules
-import i18next from "i18next";
+import settings from "i18next";
 import { initReactI18next } from "react-i18next";
 
 // Data
@@ -10,7 +10,7 @@ import japanese from "../data/translate/japanese.json";
 const resources = {
   ja: { translation: japanese },
   en: { translation: english }
-} as const;
+};
 
 // Get language
 const language_storage = localStorage.getItem("language");
@@ -22,11 +22,11 @@ const language_definition = language_storage && ["ja", "en"].includes(language_s
   ? language_system : "en";
 
 // Init
-i18next.use(initReactI18next).init({
+settings.use(initReactI18next).init({
   resources: resources,
   lng: language_definition,
   fallbackLng: "en",
   interpolation: { escapeValue: false }
 });
 
-export { i18next };
+export default settings;

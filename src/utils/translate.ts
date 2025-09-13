@@ -1,10 +1,10 @@
 // Librarys
-import { i18next } from "../settings/";
+import settings from "../settings/";
 import { TOptions } from "i18next";
 
 // Set librarys
 const librarys = {
-  i18next: i18next
+  i18next: settings.i18next
 }
 
 const use = (key: string, options?: TOptions) => {

@@ -41,16 +41,16 @@ function welcome() {
         {/* Feature */}
         <section className="p-10 grid md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold mb-2">Feature 1</h3>
-            <p className="text-gray-600">ここに機能の説明を簡単に書きます。</p>
+            <h3 className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.title")}</h3>
+            <p className="text-gray-600">{utils.translate.use("components.pages.welcome.features.0.subTitle")}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold mb-2">Feature 2</h3>
-            <p className="text-gray-600">ここに機能の説明を簡単に書きます。</p>
+            <h3 className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.1.title")}</h3>
+            <p className="text-gray-600">{utils.translate.use("components.pages.welcome.features.1.subTitle")}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-bold mb-2">Feature 3</h3>
-            <p className="text-gray-600">ここに機能の説明を簡単に書きます。</p>
+            <h3 className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.2.title")}</h3>
+            <p className="text-gray-600">{utils.translate.use("components.pages.welcome.features.2.subTitle")}</p>
           </div>
         </section>
 

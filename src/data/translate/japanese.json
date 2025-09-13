@@ -32,13 +32,15 @@
             "title": "シンプル",
             "subTitle": "とてもシンプルなシステムとデザイン"
           },
+
           {
             "title": "強力",
-            "subTitle": ""
+            "subTitle": "ちゃんと設計されたコード"
           },
+          
           {
             "title": "スピーディー",
-            "subTitle": ""
+            "subTitle": "Viteによる素早さ"
           }
         ]
       }
