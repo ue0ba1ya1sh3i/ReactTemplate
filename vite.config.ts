@@ -13,18 +13,18 @@ const plugin = {
 export default settings({
 	build: {
 		chunkSizeWarningLimit: 1000,
-		minify: 'terser',
+		minify: "terser",
 		sourcemap: true,
 
 		rollupOptions: {
 			output: {
-				assetFileNames: 'assets/[name].[hash].[ext]',
-				chunkFileNames: 'assets/[name].[hash].js',
-				entryFileNames: 'assets/[name].[hash].js',
+				assetFileNames: "assets/[name].[hash].[ext]",
+				chunkFileNames: "assets/[name].[hash].js",
+				entryFileNames: "assets/[name].[hash].js",
 
 				manualChunks(id) {
-					if (id.includes('node_modules')) {
-						return 'vendor';
+					if (id.includes("node_modules")) {
+						return "vendor";
 					}
 
 					return undefined;
@@ -34,7 +34,7 @@ export default settings({
 	},
 
 	server: {
-		host: '0.0.0.0',
+		host: "0.0.0.0",
 		port: 5173
 	},
 
@@ -51,18 +51,13 @@ export default settings({
 			],
 
 			manifest: {
-				// Profile
 				name: "Template",
 				short_name: "Template",
 				description: "This is a my unique template",
-
-				// Start URL
 				start_url: "/",
 				scope: "/",
 				display: "standalone",
 				orientation: "any",
-
-				// Background
 				theme_color: "#4F46E5",
 				background_color: "#f9fafb",
 
@@ -103,9 +98,11 @@ export default settings({
 				runtimeCaching: [
 					{
 						urlPattern: /^https:\/\/template-ue0ba1ya1sh3i\.web\.app\/.*/,
-						handler: 'StaleWhileRevalidate',
+						handler: "StaleWhileRevalidate",
+
 						options: {
-							cacheName: 'local',
+							cacheName: "local",
+
 							expiration: {
 								maxAgeSeconds: 60 * 60 * 24 * 30, // 1 month
 								maxEntries: 1000
