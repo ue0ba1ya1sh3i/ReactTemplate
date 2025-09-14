@@ -1,7 +1,6 @@
 // Librarys
 import { createRoot } from "react-dom/client";
 
-// Set librarys
 const librarys = {
   react: {
     create: createRoot
@@ -14,7 +13,6 @@ import { StrictMode, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FirstVisit } from "./components";
 
-// Set componets
 const Components = {
   pages,
   
