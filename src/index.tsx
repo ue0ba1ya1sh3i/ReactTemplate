@@ -29,36 +29,36 @@ const Components = {
     router: BrowserRouter,
     routes: Routes,
     route: Route
+  },
+
+  settings: ({ children }: { children: React.ReactNode }) => {
+    return (
+      <>
+        <Components.handmade.firstVisit>
+          {children}
+        </Components.handmade.firstVisit>
+      </>
+    );
   }
 }
 
 // Files
 import "./css/index.css";
 
-function Settings({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Components.handmade.firstVisit>
-        {children}
-      </Components.handmade.firstVisit>
-    </>
-  );
-};
-
 librarys.react.create(document.getElementById("root")!).render(
   <Components.react.strict>
     <Components.router.router>
-      <Settings>
+      <Components.settings>
         <Components.react.suspense>
-          <Routes>
+          <Components.router.routes>
             {/* Only */}
-            <Route path="/" element={<Components.pages.home />} />
-            <Route path="/settings" element={<Components.pages.settings />} />
-            <Route path="/welcome" element={<Components.pages.welcome />} />
-            <Route path="*" element={<Components.pages.notFound />} />
-          </Routes>
+            <Components.router.route path="/" element={<Components.pages.home />} />
+            <Components.router.route path="/settings" element={<Components.pages.settings />} />
+            <Components.router.route path="/welcome" element={<Components.pages.welcome />} />
+            <Components.router.route path="*" element={<Components.pages.notFound />} />
+          </Components.router.routes>
         </Components.react.suspense>
-      </Settings>
+      </Components.settings>
     </Components.router.router>
   </Components.react.strict>
 );

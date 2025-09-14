@@ -17,9 +17,14 @@ const language_storage = localStorage.getItem("language");
 const language_system = navigator.language.split("-")[0];
 
 // Set language
-const language_definition = language_storage && ["ja", "en"].includes(language_storage)
-  ? language_storage : ["ja", "en"].includes(language_system)
-  ? language_system : "en";
+let language_definition;
+if (language_storage && ["ja", "en"].includes(language_storage)) {
+  language_definition = language_storage;
+} else if (["ja", "en"].includes(language_system)) {
+  language_definition = language_system;
+} else {
+  language_definition = "en";
+};
 
 // Init
 settings.use(initReactI18next).init({
