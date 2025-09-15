@@ -6,12 +6,10 @@
   "license": "MIT",
   "author": "Arata Uebayashi",
   "description": "This is a my unique template",
-
   "keywords": [
     "template",
     "unique"
   ],
-
   "scripts": {
     "dev": "vite",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
@@ -20,7 +18,6 @@
     "hosting": "firebase deploy --only hosting",
     "emulator": "firebase emulators:start"
   },
-
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "firebase": "^11.10.0",
@@ -28,10 +25,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^15.7.2",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.3",
     "vite-plugin-pwa": "^1.0.3"
   },
-  
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -48,4 +45,3 @@
     "vite-plugin-svgr": "^4.5.0"
   }
 }
-

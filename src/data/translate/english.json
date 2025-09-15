@@ -15,38 +15,30 @@
       },
 
       "welcome": {
-        "title": "Template",
+        "title": "Simple design template",
 
-        "header": {
-          "title": "Template",
-          "navigation": "All services"
-        },
-
-        "hero": {
-          "title": "Simple and powerful templates",
-          "subTitle": "This template has all the features and design you need.",
+        "main": {
+          "message": "Simple design template",
           "button": "Get Started"
         },
 
         "features": [
           {
             "title": "Simple",
-            "subTitle": "Very simple system and design"
+            "subTitle": "The famous design template using Tailwind CSS"
           },
 
           {
             "title": "Powerful",
-            "subTitle": "Well-designed code"
+            "subTitle": "The code is consistent and very easy to edit."
           },
 
           {
             "title": "Speedy",
-            "subTitle": "Speed with Vite"
+            "subTitle": "Since we use Vite, we can develop and build quickly."
           }
         ]
       }
     }
-  },
-
-  "title": "Template"
+  }
 }

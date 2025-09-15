@@ -1,5 +1,5 @@
 {
-  "conponents": {
+  "components": {
     "pages": {
       "home": {
         "title": "ホーム",
@@ -14,38 +14,30 @@
       },
 
       "welcome": {
-        "title": "テンプレート",
+        "title": "シンプルなデザインのテンプレート",
 
-        "header": {
-          "title": "テンプレート",
-          "navigation": "すべてのサービス"
-        },
-
-        "hero": {
-          "title": "シンプルで強力なテンプレート",
-          "subTitle": "これは必要な機能やデザインが揃ったテンプレートです。",
+        "main": {
+          "message": "シンプルなデザインのテンプレート",
           "button": "始める"
         },
 
         "features": [
           {
             "title": "シンプル",
-            "subTitle": "とてもシンプルなシステムとデザイン"
+            "subTitle": "Tailwind CSSを使用した有名なデザインテンプレート"
           },
 
           {
             "title": "強力",
-            "subTitle": "ちゃんと設計されたコード"
+            "subTitle": "コードに一貫性があり非常に編集しやすいです"
           },
-          
+
           {
             "title": "スピーディー",
-            "subTitle": "Viteによる素早さ"
+            "subTitle": "Viteを使っているので高速に開発、ビルドを行うことが可能です"
           }
         ]
       }
     }
-  },
-
-  "title": "テンプレート"
+  }
 }
