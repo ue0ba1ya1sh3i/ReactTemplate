@@ -19,7 +19,8 @@
 
         "main": {
           "message": "Simple design template",
-          "button": "Get Started"
+          "start": "Get Started",
+          "product": "Other Products"
         },
 
         "features": [

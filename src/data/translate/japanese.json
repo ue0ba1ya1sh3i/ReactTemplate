@@ -18,7 +18,8 @@
 
         "main": {
           "message": "シンプルなデザインのテンプレート",
-          "button": "始める"
+          "start": "始める",
+          "product": "その他のプロダクト"
         },
 
         "features": [
