@@ -1,7 +1,4 @@
 const tailwind = {
-  round: "rounded-xl",
-  shadow: "shadow-lg",
-  box: "",
   button: (bg: string, text: string, hover: string) => {
     return `py-3 px-5 rounded-xl shadow-lg font-bold transition bg-${bg} text-${text} hover:bg-${hover}`;
   }

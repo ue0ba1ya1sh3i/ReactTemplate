@@ -5,11 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa";
 
 function welcome() {
-  // Settings
   utils.title("welcome");
-
-  console.log(tailwind);
-
   const navigate = useNavigate();
 
   const handle = () => {
@@ -20,90 +16,100 @@ function welcome() {
   return (
       <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-400 text-white">
         <section className="h-screen flex flex-col justify-center items-center px-4">
-          <p className="text-5xl font-bold mb-4 text-center">
+          <p className="text-5xl font-bold mb-5 text-center">
             Template
           </p>
 
-          <p className="text-xl mb-8 text-center">
-            {utils.translate.use("components.pages.welcome.main.message")}
+          <p className="text-3xl mb-10 text-center">
+            {utils.translate.use("components.pages.welcome.main.message.0")}
           </p>
 
-          <div className="flex gap-5">
-            <button onClick={handle} className={tailwind.button("white", "gray-800", "gray-200")}>
-              {utils.translate.use("components.pages.welcome.main.start")}
-            </button>
-
-            <a href="https://site-ue0ba1ya1sh3i.web.app/products" className={tailwind.button("white", "gray-800", "gray-200")}>
-              {utils.translate.use("components.pages.welcome.main.product")}
-            </a>
-          </div>
+          <button onClick={handle} className={tailwind.button("white", "gray-800", "gray-200")}>
+            {utils.translate.use("components.pages.welcome.main.start")}
+          </button>
         </section>
 
-        <section className="mb-16 max-w-6xl mx-auto px-4">
-          <p className="text-white text-center pb-9 text-3xl font-bold">主な特徴</p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.0.subTitle")}</p>
+        <section className="mb-20 max-w-5xl mx-auto px-4">
+          <p className="text-center mb-5 text-3xl font-bold">{utils.translate.use("components.pages.welcome.features.0.title")}</p>
+
+          <div className="grid md:grid-cols-3 gap-5 text-xl">
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.0.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.0.subTitle")}</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.1.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.1.subTitle")}</p>
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.1.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.1.subTitle")}</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="text-xl font-bold mb-2">{utils.translate.use("components.pages.welcome.features.2.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.2.subTitle")}</p>
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.2.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.2.subTitle")}</p>
             </div>
           </div>
         </section>
 
-        <section className="py-12 px-12 mb-16 bg-white">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            
-            {/* 左：画像（PCでは左、スマホでは下） */}
+        <section className="mb-20 max-w-5xl mx-auto px-4">
+          <p className="text-center mb-5 text-3xl font-bold">{utils.translate.use("components.pages.welcome.features.0.title")}</p>
+
+          <div className="grid md:grid-cols-3 gap-5 text-xl">
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.0.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.0.subTitle")}</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.1.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.1.subTitle")}</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.2.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.0.main.2.subTitle")}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="p-10 mb-20 bg-white">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2 order-2 md:order-1">
-              <img
-                src="https://placehold.co/600x400"
-                alt="アプリイメージ"
-                className="w-full rounded-xl shadow-lg"
-              />
+              <img src="https://placehold.co/600x400" alt="Image" className="w-full rounded-xl shadow-lg" />
             </div>
 
-            {/* 右：テキスト（PCでは右、スマホでは上） */}
             <div className="md:w-1/2 order-1 md:order-2">
-              <h2 className="text-3xl font-bold mt-8 text-gray-800">アプリの特徴</h2>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="py-12 px-12 mb-16 bg-white">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-right text-3xl font-bold mb-8 text-gray-800">アプリの特徴</h2>
-            </div>
-
-            <div className="md:w-1/2">
-              <img
-                src="https://placehold.co/600x400"
-                alt="アプリイメージ"
-                className="w-full rounded-xl shadow-lg"
-              />
+              <p className="text-3xl font-bold text-gray-800">{utils.translate.use("components.pages.welcome.hero.0")}</p>
             </div>
           </div>
         </section>
 
-        <section>
+        <section className="p-10 mb-20 bg-white">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div className="md:w-1/2">
+              <p className="text-3xl font-bold text-gray-800">{utils.translate.use("components.pages.welcome.hero.1")}</p>
+            </div>
 
+            <div className="md:w-1/2">
+              <img src="https://placehold.co/600x400" alt="Image" className="w-full rounded-xl shadow-lg" />
+            </div>
+          </div>
         </section>
 
-        <footer className="bg-black bg-opacity-30 py-6 mt-auto">
-          <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">
-            <p className="mb-2 md:mb-0">&copy; 2025 ue0ba1ya1sh3i Template. All rights reserved.</p>
+        <section className="max-w-5xl mb-20 mx-auto p-5 flex flex-col justify-center items-center px-4">
+          <p className="font-bold text-3xl mb-10 text-center">
+            {utils.translate.use("components.pages.welcome.main.message.1")}
+          </p>
 
-            <div className="flex space-x-6 items-center text-xl">
+          <button onClick={handle} className={tailwind.button("white", "gray-800", "gray-200")}>
+            {utils.translate.use("components.pages.welcome.main.start")}
+          </button>
+        </section>
+
+        <footer className="bg-black bg-opacity-30 py-10 mt-auto">
+          <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">
+            <p className="text-center text-sm mb-5 md:mb-0">&copy; 2025 ue0ba1ya1sh3i Template. All rights reserved.</p>
+
+            <div className="flex space-x-5 items-center text-lg">
               <a href="https://github.com/ue0ba1ya1sh3i" aria-label="GitHub" className="hover:text-gray-200 transition">
                 <FaGithub />
               </a>
