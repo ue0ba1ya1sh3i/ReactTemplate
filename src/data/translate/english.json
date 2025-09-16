@@ -43,6 +43,27 @@
                 "subTitle": "Using Vite allows for fast development and building"
               }
             ]
+          },
+
+          {
+            "title": "How to use",
+
+            "main": [
+              {
+                "title": "1. Clone",
+                "subTitle": "Clone the repository from GitHub and create a project"
+              },
+
+              {
+                "title": "2. Install",
+                "subTitle": "Install the module in the cloned directory"
+              },
+
+              {
+                "title": "3. Run",
+                "subTitle": "Enter the required values ​​in the .env file and run"
+              }
+            ]
           }
         ],
 

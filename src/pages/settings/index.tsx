@@ -1,5 +1,5 @@
 // Imports
-import utils from "../../../utils/";
+import utils from "../../utils/";
 
 function settings() {
   utils.title("settings");

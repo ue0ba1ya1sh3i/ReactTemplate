@@ -1,6 +1,6 @@
 // Imports
-import tailwind from "../../../css/tailwind"
-import utils from "../../../utils/";
+import tailwind from "../../css/tailwind"
+import utils from "../../utils/";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa";
 
@@ -51,22 +51,22 @@ function welcome() {
         </section>
 
         <section className="mb-20 max-w-5xl mx-auto px-4">
-          <p className="text-center mb-5 text-3xl font-bold">{utils.translate.use("components.pages.welcome.features.0.title")}</p>
+          <p className="text-center mb-5 text-3xl font-bold">{utils.translate.use("components.pages.welcome.features.1.title")}</p>
 
           <div className="grid md:grid-cols-3 gap-5 text-xl">
             <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.0.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.0.main.0.subTitle")}</p>
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.1.main.0.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.1.main.0.subTitle")}</p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.1.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.0.main.1.subTitle")}</p>
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.1.main.1.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.1.main.1.subTitle")}</p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
-              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.0.main.2.title")}</p>
-              <p>{utils.translate.use("components.pages.welcome.features.0.main.2.subTitle")}</p>
+              <p className="font-bold mb-2">{utils.translate.use("components.pages.welcome.features.1.main.2.title")}</p>
+              <p>{utils.translate.use("components.pages.welcome.features.1.main.2.subTitle")}</p>
             </div>
           </div>
         </section>
@@ -95,7 +95,7 @@ function welcome() {
           </div>
         </section>
 
-        <section className="max-w-5xl mb-20 mx-auto p-5 flex flex-col justify-center items-center px-4">
+        <section className="max-w-5xl h-[50vh] mx-auto p-5 flex flex-col justify-center items-center px-4">
           <p className="font-bold text-3xl mb-10 text-center">
             {utils.translate.use("components.pages.welcome.main.message.1")}
           </p>

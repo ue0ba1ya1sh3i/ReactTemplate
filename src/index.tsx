@@ -8,7 +8,7 @@ const librarys = {
 }
 
 // Components
-import pages from "./components/pages";
+import pages from "./pages";
 import { StrictMode, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FirstVisit } from "./components";
