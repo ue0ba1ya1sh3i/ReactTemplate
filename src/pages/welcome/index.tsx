@@ -1,5 +1,5 @@
 // Imports
-import tailwind from "../../css/tailwind"
+import data from "../../css/tailwind"
 import utils from "../../utils/";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa";
@@ -24,7 +24,7 @@ function welcome() {
             {utils.translate.use("components.pages.welcome.main.message.0")}
           </p>
 
-          <button onClick={handle} className={tailwind.button("white", "gray-800", "gray-200")}>
+          <button onClick={handle} className={data.button("white")}>
             {utils.translate.use("components.pages.welcome.main.start")}
           </button>
         </section>
@@ -100,7 +100,7 @@ function welcome() {
             {utils.translate.use("components.pages.welcome.main.message.1")}
           </p>
 
-          <button onClick={handle} className={tailwind.button("white", "gray-800", "gray-200")}>
+          <button onClick={handle} className={data.button("white")}>
             {utils.translate.use("components.pages.welcome.main.start")}
           </button>
         </section>
