@@ -1,11 +1,5 @@
-// Librarys
+// Library
 import { createRoot } from "react-dom/client";
-
-const librarys = {
-  react: {
-    create: createRoot
-  }
-}
 
 // Components
 import pages from "./pages";
@@ -15,10 +9,6 @@ import { FirstVisit } from "./components";
 
 const Components = {
   pages,
-  
-  handmade: {
-    firstVisit: FirstVisit
-  },
 
   react: {
     strict: StrictMode,
@@ -34,9 +24,9 @@ const Components = {
   settings: ({ children }: { children: React.ReactNode }) => {
     return (
       <>
-        <Components.handmade.firstVisit>
+        <FirstVisit>
           {children}
-        </Components.handmade.firstVisit>
+        </FirstVisit>
       </>
     );
   }
@@ -45,7 +35,7 @@ const Components = {
 // Files
 import "./css/index.css";
 
-librarys.react.create(document.getElementById("root")!).render(
+createRoot(document.getElementById("root")!).render(
   <Components.react.strict>
     <Components.router.router>
       <Components.settings>
