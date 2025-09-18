@@ -1,20 +1,15 @@
 // Library
-import { defineConfig as settings } from "vite";
+import { defineConfig } from "vite";
 
 // Plugins
 import react from "@vitejs/plugin-react-swc";
-import { VitePWA } from "vite-plugin-pwa"
+import { VitePWA } from "vite-plugin-pwa";
 
-const plugin = {
-  react: react,
-  pwa: VitePWA,
-};
-
-export default settings({
+export default defineConfig({
 	build: {
 		chunkSizeWarningLimit: 1000,
 		minify: "terser",
-		sourcemap: true,
+		sourcemap: false,
 
 		rollupOptions: {
 			output: {
@@ -33,17 +28,25 @@ export default settings({
 		}
 	},
 
+	esbuild: {
+		target: "es2020"
+	},
+
 	server: {
 		host: "0.0.0.0",
 		port: 5173
 	},
 
 	plugins: [
-		plugin.react(),
+		react(),
 
-		plugin.pwa({
+		VitePWA({
 			injectRegister: "auto",
 			registerType: "autoUpdate",
+
+			devOptions: {
+				enabled: false
+			},
 
 			includeAssets: [
 				"favicons/*",
