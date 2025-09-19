@@ -1,7 +1,7 @@
-import i18next from "./i118next"
+import i18next from "./i18next"
 
 const settings = {
   i18next
-};
+}
 
-export default settings;
+export default settings

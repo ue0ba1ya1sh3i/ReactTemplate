@@ -1,15 +1,16 @@
-// Librarys
-import { createRoot } from "react-dom/client";
+// Library
+import { createRoot } from "react-dom/client"
+import { StrictMode, Suspense } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // Files
-import "./css/index.css";
+import "./css/index.css"
 
 // Components
-import { Home, NotFound, Settings, Welcome } from "./pages";
-import { StrictMode, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FirstVisit } from "./components";
+import { Home, NotFound, Settings, Welcome } from "./pages"
+import { FirstVisit } from "./components"
 
+// Components
 const AppSettings = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
@@ -17,8 +18,8 @@ const AppSettings = ({ children }: { children: React.ReactNode }) => {
         {children}
       </FirstVisit>
     </>
-  );
-};
+  )
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -35,4 +36,4 @@ createRoot(document.getElementById("root")!).render(
       </AppSettings>
     </BrowserRouter>
   </StrictMode>
-);
+)

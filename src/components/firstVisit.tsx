@@ -1,23 +1,23 @@
-// Librarys
-import { useEffect, ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+// Library
+import { useEffect, ReactNode } from "react"
+import { useNavigate } from "react-router-dom"
 
 interface FirstVisitProps {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 function FirstVisit({ children }: FirstVisitProps) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const visited = localStorage.getItem("firstVisit");
+    const visited = localStorage.getItem("firstVisit")
 
     if (!visited) {
-      navigate("/welcome", { replace: true });
-    };
-  }, [navigate]);
+      navigate("/welcome", { replace: true })
+    }
+  }, [navigate])
 
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
-export { FirstVisit };
+export { FirstVisit }

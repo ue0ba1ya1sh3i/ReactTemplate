@@ -1,5 +1,5 @@
-import { set as setTitle } from "./title";
-import { use as useTranslate, set as setTranslate } from "./translate";
+import { set as setTitle } from "./title"
+import { use as useTranslate, set as setTranslate } from "./translate"
 
 const utils = {
   translate: {
@@ -8,6 +8,6 @@ const utils = {
   },
 
   title: setTitle
-};
+}
 
-export default utils;
+export default utils
