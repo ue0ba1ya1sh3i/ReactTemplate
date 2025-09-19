@@ -1,16 +1,16 @@
 // Library
-import settings from "i18next"
+import i18next from "i18next"
 import { initReactI18next } from "react-i18next"
 
 // Data
 import english from "../data/translate/english.json"
 import japanese from "../data/translate/japanese.json"
 
-// Get language
+// Get
 const storage = localStorage.getItem("language")
 const system = navigator.language.split("-")[0]
 
-// Set language
+// Set
 let language
 
 if (storage && ["ja", "en"].includes(storage)) {
@@ -26,12 +26,11 @@ const resources = {
   en: { translation: english }
 }
 
-settings.use(initReactI18next).init({
+i18next.use(initReactI18next).init({
   resources: resources,
   lng: language,
   fallbackLng: "en",
   interpolation: { escapeValue: false }
 })
 
-export default settings
-
+export default i18next

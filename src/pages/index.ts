@@ -1,7 +1,6 @@
-// Pages
-import { App as Home } from "./home"
-import { App as NotFound } from "./notFound"
-import { App as Settings } from "./settings"
-import { App as Welcome } from "./welcome"
+// Library
+import { lazy } from "react";
 
-export { Home, NotFound, Settings, Welcome }
+export const Home = lazy(() => import("./home"));
+export const NotFound = lazy(() => import("./notFound"));
+export const Welcome = lazy(() => import("./welcome"));

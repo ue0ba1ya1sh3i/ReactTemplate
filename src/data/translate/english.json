@@ -1,77 +1,70 @@
 {
-  "components": {
-    "pages": {
-      "home": {
-        "title": "Home",
-        "return_button": "Return welcome page"
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+
+    "notFound": {
+      "title": "Page not found"
+    },
+
+    "welcome": {
+      "title": "Simple design template",
+
+      "main": {
+        "message": ["Simple design template", "Get the app now"],
+        "start": "Get started now",
+        "product": "Other Products"
       },
 
-      "notFound": {
-        "title": "Page not found"
-      },
+      "features": [
+        {
+          "title": "Main Features",
 
-      "settings": {
-        "title": "Settings"
-      },
+          "main": [
+            {
+              "title": "Simple",
+              "subTitle": "Famous design templates using Tailwind CSS"
+            },
 
-      "welcome": {
-        "title": "Simple design template",
+            {
+              "title": "Powerful",
+              "subTitle": "Code is consistent and very easy to edit"
+            },
 
-        "main": {
-          "message": ["Simple design template", "Get the template now"],
-          "start": "Get started now",
-          "product": "Other Products"
+            {
+              "title": "Speed",
+              "subTitle": "Using Vite allows for fast development and building"
+            }
+          ]
         },
 
-        "features": [
-          {
-            "title": "Main Features",
+        {
+          "title": "How to use",
 
-            "main": [
-              {
-                "title": "Simple",
-                "subTitle": "Famous design templates using Tailwind CSS"
-              },
+          "main": [
+            {
+              "title": "1. Clone",
+              "subTitle": "Clone the repository from GitHub and create a project"
+            },
 
-              {
-                "title": "Powerful",
-                "subTitle": "Code is consistent and very easy to edit"
-              },
+            {
+              "title": "2. Install",
+              "subTitle": "Install the module in the cloned directory"
+            },
 
-              {
-                "title": "Speed",
-                "subTitle": "Using Vite allows for fast development and building"
-              }
-            ]
-          },
+            {
+              "title": "3. Run",
+              "subTitle": "Enter the required values in the .env file and run"
+            }
+          ]
+        }
+      ],
 
-          {
-            "title": "How to use",
-
-            "main": [
-              {
-                "title": "1. Clone",
-                "subTitle": "Clone the repository from GitHub and create a project"
-              },
-
-              {
-                "title": "2. Install",
-                "subTitle": "Install the module in the cloned directory"
-              },
-
-              {
-                "title": "3. Run",
-                "subTitle": "Enter the required values ​​in the .env file and run"
-              }
-            ]
-          }
-        ],
-
-        "hero": [
-          "Stylish, simple, and consistent design with Tailwind CSS.",
-          "Easily clone projects from GitHub."
-        ]
-      }
+      "hero": [
+        "Stylish, simple, and consistent design with Tailwind CSS.",
+        "Easily clone projects from GitHub."
+      ]
     }
   }
 }

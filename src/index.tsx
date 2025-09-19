@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "./css/index.css"
 
 // Components
-import { Home, NotFound, Settings, Welcome } from "./pages"
+import { Home, NotFound, Welcome } from "./pages"
 import { FirstVisit } from "./components"
 
 // Components
@@ -28,7 +28,6 @@ createRoot(document.getElementById("root")!).render(
         <Suspense>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/settings" element={<Settings />} />
             <Route path="/welcome" element={<Welcome />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

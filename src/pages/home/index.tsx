@@ -2,13 +2,13 @@
 import utils from "../../utils/"
 
 function App() {
-  utils.title("settings")
+  utils.title.set("home")
 
   return (
     <>
-      {utils.translate.use("pages.settings.title")}
+      {utils.translate.use("pages.home.title")}
     </>
   )
 }
 
-export { App }
+export default App
