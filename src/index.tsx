@@ -1,48 +1,38 @@
 // Librarys
 import { createRoot } from "react-dom/client";
 
+// Files
+import "./css/index.css";
+
 // Components
-import pages from "./pages";
+import { Home, NotFound, Settings, Welcome } from "./pages";
 import { StrictMode, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FirstVisit } from "./components";
 
-const Components = {
-  pages,
-
-  react: {
-    strict: StrictMode,
-    suspense: Suspense
-  },
-
-  settings: ({ children }: { children: React.ReactNode }) => {
-    return (
-      <>
-        <FirstVisit>
-          {children}
-        </FirstVisit>
-      </>
-    );
-  }
-}
-
-// Files
-import "./css/index.css";
+const AppSettings = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      <FirstVisit>
+        {children}
+      </FirstVisit>
+    </>
+  );
+};
 
 createRoot(document.getElementById("root")!).render(
-  <Components.react.strict>
+  <StrictMode>
     <BrowserRouter>
-      <Components.settings>
-        <Components.react.suspense>
+      <AppSettings>
+        <Suspense>
           <Routes>
-            {/* Only */}
-            <Route path="/" element={<Components.pages.home />} />
-            <Route path="/settings" element={<Components.pages.settings />} />
-            <Route path="/welcome" element={<Components.pages.welcome />} />
-            <Route path="*" element={<Components.pages.notFound />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </Components.react.suspense>
-      </Components.settings>
+        </Suspense>
+      </AppSettings>
     </BrowserRouter>
-  </Components.react.strict>
+  </StrictMode>
 );

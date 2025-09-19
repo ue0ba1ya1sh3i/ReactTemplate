@@ -1,35 +1,35 @@
-// Modules
+// Librarys
 import settings from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// Data
+// Datas
 import english from "../data/translate/english.json";
 import japanese from "../data/translate/japanese.json";
 
-// Resources
+
+// Get language
+const storage = localStorage.getItem("language");
+const system = navigator.language.split("-")[0];
+
+// Set language
+let language;
+
+if (storage && ["ja", "en"].includes(storage)) {
+  language = storage;
+} else if (["ja", "en"].includes(system)) {
+  language = system;
+} else {
+  language = "en";
+}
+
 const resources = {
   ja: { translation: japanese },
   en: { translation: english }
 };
 
-// Get language
-const language_storage = localStorage.getItem("language");
-const language_system = navigator.language.split("-")[0];
-
-// Set language
-let language_definition;
-if (language_storage && ["ja", "en"].includes(language_storage)) {
-  language_definition = language_storage;
-} else if (["ja", "en"].includes(language_system)) {
-  language_definition = language_system;
-} else {
-  language_definition = "en";
-};
-
-// Init
 settings.use(initReactI18next).init({
   resources: resources,
-  lng: language_definition,
+  lng: language,
   fallbackLng: "en",
   interpolation: { escapeValue: false }
 });

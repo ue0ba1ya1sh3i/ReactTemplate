@@ -1,7 +1,7 @@
 // Imports
 import utils from "../../utils/";
 
-function notFound() {
+function App() {
   utils.title("settings");
 
   return (
@@ -11,4 +11,4 @@ function notFound() {
   );
 };
 
-export { notFound };
+export { App };

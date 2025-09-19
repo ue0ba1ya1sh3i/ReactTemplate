@@ -1,14 +1,7 @@
 // Pages
-import { home } from "./home";
-import { notFound } from "./notFound";
-import { settings } from "./settings";
-import { welcome } from "./welcome";
+import { App as Home } from "./home";
+import { App as NotFound } from "./notFound";
+import { App as Settings } from "./settings";
+import { App as Welcome } from "./welcome";
 
-const Pages = {
-  welcome,
-  settings,
-  home,
-  notFound
-};
-
-export default Pages;
+export { Home, NotFound, Settings, Welcome };

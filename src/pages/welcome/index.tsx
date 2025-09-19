@@ -4,7 +4,7 @@ import utils from "../../utils/";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa";
 
-function welcome() {
+function App() {
   utils.title("welcome");
   const navigate = useNavigate();
 
@@ -128,4 +128,4 @@ function welcome() {
   );
 };
 
-export { welcome };
+export { App };
