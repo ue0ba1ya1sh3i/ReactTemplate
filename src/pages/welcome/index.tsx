@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-400 text-white">
+    <div className="min-h-screen min-h-[100dvh]  bg-gradient-to-r from-blue-400 to-purple-400 text-white">
       <section className="h-screen flex flex-col justify-center items-center px-4">
         <p className="text-5xl font-bold mb-5 text-center">
           {utils.title.use()}
