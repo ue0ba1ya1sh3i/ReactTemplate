@@ -1,4 +1,4 @@
-// Library
+// Librarys
 import { createRoot } from "react-dom/client";
 
 // Components
@@ -13,12 +13,6 @@ const Components = {
   react: {
     strict: StrictMode,
     suspense: Suspense
-  },
-
-  router: {
-    router: BrowserRouter,
-    routes: Routes,
-    route: Route
   },
 
   settings: ({ children }: { children: React.ReactNode }) => {
@@ -37,18 +31,18 @@ import "./css/index.css";
 
 createRoot(document.getElementById("root")!).render(
   <Components.react.strict>
-    <Components.router.router>
+    <BrowserRouter>
       <Components.settings>
         <Components.react.suspense>
-          <Components.router.routes>
+          <Routes>
             {/* Only */}
-            <Components.router.route path="/" element={<Components.pages.home />} />
-            <Components.router.route path="/settings" element={<Components.pages.settings />} />
-            <Components.router.route path="/welcome" element={<Components.pages.welcome />} />
-            <Components.router.route path="*" element={<Components.pages.notFound />} />
-          </Components.router.routes>
+            <Route path="/" element={<Components.pages.home />} />
+            <Route path="/settings" element={<Components.pages.settings />} />
+            <Route path="/welcome" element={<Components.pages.welcome />} />
+            <Route path="*" element={<Components.pages.notFound />} />
+          </Routes>
         </Components.react.suspense>
       </Components.settings>
-    </Components.router.router>
+    </BrowserRouter>
   </Components.react.strict>
 );
