@@ -61,28 +61,28 @@ export default defineConfig({
 				scope: "/",
 				display: "standalone",
 				orientation: "any",
-				theme_color: "#4F46E5",
-				background_color: "#f9fafb",
+				theme_color: "#E5E7EB",
+				background_color: "#E5E7EB",
 
 				icons: [
 					{
 						"purpose": "any maskable",
 						"sizes": "96x96",
-						"src": "/favicons/x96.png",
+						"src": "/favicons/96.png",
 						"type": "image/png"
 					},
 
 					{
 						"purpose": "any maskable",
 						"sizes": "192x192",
-						"src": "/favicons/x192.png",
+						"src": "/favicons/192.png",
 						"type": "image/png"
 					},
 
 					{
 						"purpose": "any maskable",
 						"sizes": "512x512",
-						"src": "/favicons/x512.png",
+						"src": "/favicons/512.png",
 						"type": "image/png"
 					}
 				]
