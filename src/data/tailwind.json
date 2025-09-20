@@ -1,0 +1,7 @@
+{
+  "color": {
+    "white": {
+      "button": "bg-white text-gray-800 hover:bg-gray-200"
+    }
+  }
+}
