@@ -5,13 +5,14 @@
   "type": "module",
   "license": "MIT",
   "author": "Arata Uebayashi",
-  "description": "Simple design template",
+  "description": "This is a simple template",
   "keywords": [
     "Template",
     "Design",
     "Simple"
   ],
   "scripts": {
+    "setup": "node ./commands/setup.js",
     "dev": "vite",
     "preview": "vite preview --host",
     "build": "tsc --noEmit && vite build",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "figlet": "^1.9.3",
     "firebase": "^11.10.0",
     "i18next": "^25.4.2",
     "react": "^18.2.0",

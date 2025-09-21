@@ -148,7 +148,7 @@ function App() {
       <footer className="bg-black bg-opacity-30 py-10 mt-auto">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">
           <p className="text-center text-sm mb-5 md:mb-0">
-            &copy; 2025 ue0ba1ya1sh3i {utils.title.use()}. All rights reserved.
+            &copy; {new Date().getFullYear()} {import.meta.env.VITE_AUTHOR} {utils.title.use()}. All rights reserved.
           </p>
 
           <div className="flex space-x-5 items-center text-lg">
