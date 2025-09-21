@@ -6,21 +6,18 @@
   "license": "MIT",
   "author": "Arata Uebayashi",
   "description": "Simple design template",
-
   "keywords": [
     "Template",
     "Design",
     "Simple"
   ],
-
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "preview": "vite preview --host",
     "build": "tsc --noEmit && vite build",
+    "confilm": "npm run build && npm run preview",
     "hosting": "firebase deploy --only hosting"
   },
-
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "firebase": "^11.10.0",
@@ -32,16 +29,11 @@
     "react-router-dom": "^7.6.3",
     "vite-plugin-pwa": "^1.0.3"
   },
-  
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "@typescript-eslint/parser": "^8.34.1",
     "@vitejs/plugin-react-swc": "^4.0.0",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.29.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.3",
