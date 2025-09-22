@@ -36,6 +36,7 @@ const ask = (question) => new Promise(resolve => rl.question(question, resolve))
 // メイン処理
 const index = async () => {
   // ロゴ
+  br();
   const logo = figlet.textSync("Setup center", { font: "Standard" });
   colorLog(logo, "yellow");
   br();

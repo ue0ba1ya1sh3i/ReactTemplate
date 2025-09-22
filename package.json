@@ -1,11 +1,11 @@
 {
   "name": "template",
   "private": true,
-  "version": "1.0.0",
+  "version": "1",
   "type": "module",
   "license": "MIT",
   "author": "Arata Uebayashi",
-  "description": "This is a simple template",
+  "description": "Simple template",
   "keywords": [
     "Template",
     "Design",
