@@ -3,6 +3,7 @@ import functions from '../../settings/tailwind'
 import utils from '../../utils/'
 import { useNavigate } from 'react-router-dom'
 import { FaGithub, FaTiktok, FaYoutube } from 'react-icons/fa'
+import { Button } from "flowbite-react";
 
 function App() {
   utils.title.set('welcome')
@@ -144,6 +145,17 @@ function App() {
           {utils.translate.use('pages.welcome.main.start')}
         </button>
       </section>
+
+      <div className="flex flex-wrap gap-2">
+        <Button>Default</Button>
+        <Button color="alternative">Alternative</Button>
+        <Button color="dark">Dark</Button>
+        <Button color="light">Light</Button>
+        <Button color="green">Green</Button>
+        <Button color="red">Red</Button>
+        <Button color="yellow">Yellow</Button>
+        <Button color="purple">Purple</Button>
+      </div>
 
       <footer className="bg-black bg-opacity-30 py-10 mt-auto">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">
