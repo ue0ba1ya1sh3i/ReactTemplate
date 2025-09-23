@@ -1,22 +1,18 @@
-// Librarys
 import fs from "node:fs"
 import readline from "node:readline"
 import { stdin as input, stdout as output } from "node:process"
 import figlet from "figlet"
 
-// Setup readline
+// Setup
 const rl = readline.createInterface({ input, output })
 
-// 色付きログ
 const colorLog = (text, color) => {
   const colors = { red: "\x1b[31m", green: "\x1b[32m", yellow: "\x1b[33m" }
   console.log(`${colors[color] || "\x1b[0m"}${text}\x1b[0m`)
 }
 
-// 改行ヘルパー
 const br = (times = 1) => process.stdout.write("\n".repeat(times))
 
-// 角付きログボックス
 const logBox = (...lines) => {
   const width = Math.max(...lines.map((l) => l.length))
   const top = "┌" + "─".repeat(width + 2) + "┐"
@@ -47,6 +43,7 @@ const index = async () => {
   // 質問リスト
   const questions = [
     { key: "title", prompt: "Input app title: " },
+    { key: "short_title", prompt: "Input app short title: " },
     { key: "description", prompt: "Input app description: " },
     { key: "author", prompt: "Input author name: " },
     { key: "version", prompt: "Input app version: " }
@@ -73,9 +70,11 @@ const index = async () => {
     // .env 作成
     const envVars = {
       VITE_TITLE: answers.title,
+      VITE_SHORT_TITLE: answers.short_title,
       VITE_DESCRIPTION: answers.description,
       VITE_AUTHOR: answers.author
     }
+    
     fs.writeFileSync(
       ".env",
       Object.entries(envVars)

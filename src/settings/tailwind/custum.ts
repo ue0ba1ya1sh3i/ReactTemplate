@@ -1,4 +1,4 @@
-import data from "../data/tailwind.json"
+import data from "../../data/tailwind.json"
 
 const functions = {
   button: (color: string) => {

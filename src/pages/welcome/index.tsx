@@ -1,5 +1,5 @@
 // Imports
-import functions from "../../settings/tailwind"
+import custum from "../../settings/tailwind/custum"
 import utils from "../../utils/"
 import { useNavigate } from "react-router-dom"
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa"
@@ -23,7 +23,7 @@ function App() {
           {utils.translate.use("pages.welcome.main.message.0")}
         </p>
 
-        <button onClick={handle} className={functions.button("white")}>
+        <button onClick={handle} className={custum.button("white")}>
           {utils.translate.use("pages.welcome.main.start")}
         </button>
       </section>
@@ -127,7 +127,7 @@ function App() {
           {utils.translate.use("pages.welcome.main.message.1")}
         </p>
 
-        <button onClick={handle} className={functions.button("white")}>
+        <button onClick={handle} className={custum.button("white")}>
           {utils.translate.use("pages.welcome.main.start")}
         </button>
       </section>

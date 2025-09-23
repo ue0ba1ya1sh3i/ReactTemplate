@@ -8,7 +8,7 @@
   "description": "Simple template",
 
   "scripts": {
-    "format": "prettier --write '**/*.{ts,tsx,js,json,css,md}'",
+    "format": "prettier --write '**/*.{ts,tsx,js,json,css,md,html,cjs}'",
     "setup": "node ./commands/setup.js",
     "dev": "vite",
     "preview": "vite preview --host",

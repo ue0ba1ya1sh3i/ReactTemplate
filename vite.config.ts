@@ -11,11 +11,12 @@ export default defineConfig(({ mode }) => {
 
   // Environments
   const VITE_TITLE = env.VITE_TITLE || "Template"
+  const VITE_SHORT_TITLE = env.VITE_SHORT_TITLE || "Template"
   const VITE_DESCRIPTION = env.VITE_DESCRIPTION || "This is my unique template"
 
   return {
     build: {
-      chunkSizeWarningLimit: 1000,
+      chunkSizeWarningLimit: 500,
       minify: "terser",
       sourcemap: false,
 
@@ -27,10 +28,8 @@ export default defineConfig(({ mode }) => {
 
           manualChunks(id) {
             if (id.includes("node_modules")) {
-              return "vendor"
+              return "librarys"
             }
-
-            return undefined
           }
         }
       }
@@ -49,7 +48,7 @@ export default defineConfig(({ mode }) => {
       react(),
 
       {
-        name: "html_transform",
+        name: "settings_html",
         transformIndexHtml(html) {
           return html
             .replace(/<title>.*<\/title>/, `<title>${VITE_TITLE}</title>`)
@@ -72,7 +71,7 @@ export default defineConfig(({ mode }) => {
 
         manifest: {
           name: VITE_TITLE,
-          short_name: VITE_TITLE,
+          short_name: VITE_SHORT_TITLE,
           description: VITE_DESCRIPTION,
           start_url: "/",
           scope: "/",
@@ -108,24 +107,7 @@ export default defineConfig(({ mode }) => {
         workbox: {
           cleanupOutdatedCaches: true,
           globPatterns: ["**/*"],
-
           globIgnores: ["sw.js", "workbox-*.js", "**/*.{map,mp4,zip,mp3,pdf}"],
-
-          runtimeCaching: [
-            {
-              urlPattern: /^https:\/\/template-ue0ba1ya1sh3i\.web\.app\/.*/,
-              handler: "StaleWhileRevalidate",
-
-              options: {
-                cacheName: "local",
-
-                expiration: {
-                  maxAgeSeconds: 60 * 60 * 24 * 30, // 1 month
-                  maxEntries: 1000
-                }
-              }
-            }
-          ]
         }
       })
     ]
