@@ -6,7 +6,10 @@ import react from "@vitejs/plugin-react-swc"
 import { VitePWA } from "vite-plugin-pwa"
 
 export default defineConfig(({ mode }) => {
+  // Constant
   const env = loadEnv(mode, process.cwd(), "")
+
+  // Environments
   const VITE_TITLE = env.VITE_TITLE || "Template"
   const VITE_DESCRIPTION = env.VITE_DESCRIPTION || "This is my unique template"
 
@@ -46,7 +49,7 @@ export default defineConfig(({ mode }) => {
       react(),
 
       {
-        name: "html-transform",
+        name: "html_transform",
         transformIndexHtml(html) {
           return html
             .replace(/<title>.*<\/title>/, `<title>${VITE_TITLE}</title>`)
