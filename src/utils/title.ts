@@ -1,4 +1,4 @@
-import utils from './'
+import utils from "./"
 
 const set = (name: string) => {
   const path = `pages.${name}.title`

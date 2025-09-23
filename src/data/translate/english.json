@@ -61,10 +61,7 @@
         }
       ],
 
-      "hero": [
-        "Stylish, simple, and consistent design with Tailwind CSS.",
-        "Easily clone projects from GitHub."
-      ]
+      "hero": ["Stylish, simple, and consistent design with Tailwind CSS.", "Easily clone projects from GitHub."]
     }
   }
 }

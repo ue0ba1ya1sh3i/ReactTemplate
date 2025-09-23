@@ -28,18 +28,18 @@ export default defineConfig(({ mode }) => {
             }
 
             return undefined
-          },
-        },
-      },
+          }
+        }
+      }
     },
 
     esbuild: {
-      target: "es2020",
+      target: "es2020"
     },
 
     server: {
       host: "0.0.0.0",
-      port: 5173,
+      port: 5173
     },
 
     plugins: [
@@ -48,14 +48,13 @@ export default defineConfig(({ mode }) => {
       {
         name: "html-transform",
         transformIndexHtml(html) {
-          return html.replace(
-            /<title>.*<\/title>/, 
-            `<title>${VITE_TITLE}</title>`
-          ).replace(
-            /<meta name="description" content=".*">/,
-            `<meta name="description" content="${VITE_DESCRIPTION}">`
-          )
-        },
+          return html
+            .replace(/<title>.*<\/title>/, `<title>${VITE_TITLE}</title>`)
+            .replace(
+              /<meta name="description" content=".*">/,
+              `<meta name="description" content="${VITE_DESCRIPTION}">`
+            )
+        }
       },
 
       VitePWA({
@@ -63,7 +62,7 @@ export default defineConfig(({ mode }) => {
         registerType: "autoUpdate",
 
         devOptions: {
-          enabled: false,
+          enabled: false
         },
 
         includeAssets: ["favicons/*", "index.html"],
@@ -84,23 +83,23 @@ export default defineConfig(({ mode }) => {
               purpose: "any maskable",
               sizes: "96x96",
               src: "/favicons/96.png",
-              type: "image/png",
+              type: "image/png"
             },
 
             {
               purpose: "any maskable",
               sizes: "192x192",
               src: "/favicons/192.png",
-              type: "image/png",
+              type: "image/png"
             },
 
             {
               purpose: "any maskable",
               sizes: "512x512",
               src: "/favicons/512.png",
-              type: "image/png",
-            },
-          ],
+              type: "image/png"
+            }
+          ]
         },
 
         workbox: {
@@ -119,13 +118,13 @@ export default defineConfig(({ mode }) => {
 
                 expiration: {
                   maxAgeSeconds: 60 * 60 * 24 * 30, // 1 month
-                  maxEntries: 1000,
-                },
-              },
-            },
-          ],
-        },
-      }),
-    ],
+                  maxEntries: 1000
+                }
+              }
+            }
+          ]
+        }
+      })
+    ]
   }
 })

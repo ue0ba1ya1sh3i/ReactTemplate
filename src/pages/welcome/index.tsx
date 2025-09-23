@@ -1,101 +1,87 @@
 // Imports
-import functions from '../../settings/tailwind'
-import utils from '../../utils/'
-import { useNavigate } from 'react-router-dom'
-import { FaGithub, FaTiktok, FaYoutube } from 'react-icons/fa'
-import { Button } from "flowbite-react";
+import functions from "../../settings/tailwind"
+import utils from "../../utils/"
+import { useNavigate } from "react-router-dom"
+import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa"
+import { Button } from "flowbite-react"
 
 function App() {
-  utils.title.set('welcome')
+  utils.title.set("welcome")
   const navigate = useNavigate()
 
   const handle = () => {
-    localStorage.setItem('firstVisit', 'true')
-    navigate('/')
+    localStorage.setItem("firstVisit", "true")
+    navigate("/")
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-400 text-white">
       <section className="h-[100dvh] flex flex-col justify-center items-center px-4">
-        <p className="text-5xl font-bold mb-5 text-center">
-          {utils.title.use()}
-        </p>
+        <p className="text-5xl font-bold mb-5 text-center">{utils.title.use()}</p>
 
         <p className="text-3xl mb-10 text-center">
-          {utils.translate.use('pages.welcome.main.message.0')}
+          {utils.translate.use("pages.welcome.main.message.0")}
         </p>
 
-        <button onClick={handle} className={functions.button('white')}>
-          {utils.translate.use('pages.welcome.main.start')}
+        <button onClick={handle} className={functions.button("white")}>
+          {utils.translate.use("pages.welcome.main.start")}
         </button>
       </section>
 
       <section className="mb-20 max-w-5xl mx-auto px-4">
         <p className="text-center mb-5 text-3xl font-bold">
-          {utils.translate.use('pages.welcome.features.0.title')}
+          {utils.translate.use("pages.welcome.features.0.title")}
         </p>
 
         <div className="grid md:grid-cols-3 gap-5 text-xl">
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.0.main.0.title')}
+              {utils.translate.use("pages.welcome.features.0.main.0.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.0.main.0.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.0.main.0.subTitle")}</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.0.main.1.title')}
+              {utils.translate.use("pages.welcome.features.0.main.1.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.0.main.1.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.0.main.1.subTitle")}</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.0.main.2.title')}
+              {utils.translate.use("pages.welcome.features.0.main.2.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.0.main.2.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.0.main.2.subTitle")}</p>
           </div>
         </div>
       </section>
 
       <section className="mb-20 max-w-5xl mx-auto px-4">
         <p className="text-center mb-5 text-3xl font-bold">
-          {utils.translate.use('pages.welcome.features.1.title')}
+          {utils.translate.use("pages.welcome.features.1.title")}
         </p>
 
         <div className="grid md:grid-cols-3 gap-5 text-xl">
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.1.main.0.title')}
+              {utils.translate.use("pages.welcome.features.1.main.0.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.1.main.0.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.1.main.0.subTitle")}</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.1.main.1.title')}
+              {utils.translate.use("pages.welcome.features.1.main.1.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.1.main.1.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.1.main.1.subTitle")}</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-lg transition text-center text-gray-800">
             <p className="font-bold mb-2">
-              {utils.translate.use('pages.welcome.features.1.main.2.title')}
+              {utils.translate.use("pages.welcome.features.1.main.2.title")}
             </p>
-            <p>
-              {utils.translate.use('pages.welcome.features.1.main.2.subTitle')}
-            </p>
+            <p>{utils.translate.use("pages.welcome.features.1.main.2.subTitle")}</p>
           </div>
         </div>
       </section>
@@ -112,7 +98,7 @@ function App() {
 
           <div className="md:w-1/2 order-1 md:order-2">
             <p className="text-3xl font-bold text-gray-800">
-              {utils.translate.use('pages.welcome.hero.0')}
+              {utils.translate.use("pages.welcome.hero.0")}
             </p>
           </div>
         </div>
@@ -122,7 +108,7 @@ function App() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <p className="text-3xl font-bold text-gray-800">
-              {utils.translate.use('pages.welcome.hero.1')}
+              {utils.translate.use("pages.welcome.hero.1")}
             </p>
           </div>
 
@@ -138,11 +124,11 @@ function App() {
 
       <section className="max-w-5xl h-[50vh] mx-auto p-5 flex flex-col justify-center items-center px-4">
         <p className="font-bold text-3xl mb-10 text-center">
-          {utils.translate.use('pages.welcome.main.message.1')}
+          {utils.translate.use("pages.welcome.main.message.1")}
         </p>
 
-        <button onClick={handle} className={functions.button('white')}>
-          {utils.translate.use('pages.welcome.main.start')}
+        <button onClick={handle} className={functions.button("white")}>
+          {utils.translate.use("pages.welcome.main.start")}
         </button>
       </section>
 
@@ -160,7 +146,8 @@ function App() {
       <footer className="bg-black bg-opacity-30 py-10 mt-auto">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">
           <p className="text-center text-sm mb-5 md:mb-0">
-            &copy; {new Date().getFullYear()} {import.meta.env.VITE_AUTHOR} {utils.title.use()}. All rights reserved.
+            &copy; {new Date().getFullYear()} {import.meta.env.VITE_AUTHOR} {utils.title.use()}. All
+            rights reserved.
           </p>
 
           <div className="flex space-x-5 items-center text-lg">

@@ -1,22 +1,31 @@
 {
+  //Settings
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Prettier
+  "prettier.singleQuote": false,
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "always",
+  "prettier.printWidth": 100,
+  "prettier.endOfLine": "lf",
+  "prettier.insertFinalNewline": true,
+  "prettier.quoteProps": "as-needed",
+  "prettier.proseWrap": "preserve",
+  "tailwindCSS.classAttributes": ["class", "className", "theme"],
+
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.scss": "scss",
+    "*.md": "markdown"
   },
-  "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "theme"
-  ],
+
   "tailwindCSS.experimental.classRegex": [
-    [
-      "twMerge\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ],
-    [
-      "createTheme(?:<\\w+>)?\\s*\\(([^)]*)\\)",
-      "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"
-    ]
+    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["createTheme(?:<\\w+>)?\\s*\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
   ]
 }
