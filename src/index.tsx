@@ -3,11 +3,9 @@ import { createRoot } from "react-dom/client"
 import { StrictMode, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-// File
+// CSS
+import { customTheme } from "./settings/flowbite"
 import "./css/index.css"
-
-// Setting
-import { customTheme } from "./settings/tailwind/flowbite"
 
 // Components
 import { Home, NotFound, Welcome } from "./pages"
@@ -18,7 +16,9 @@ const AppSettings = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <ThemeProvider theme={customTheme}>
-        <FirstVisit>{children}</FirstVisit>
+        <FirstVisit>
+          {children}
+        </FirstVisit>
       </ThemeProvider>
     </>
   )

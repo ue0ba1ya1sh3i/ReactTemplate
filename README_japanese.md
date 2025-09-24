@@ -1,1 +1,14 @@
-# Template
+- components
+  - parts
+  - system
+- data
+  - translate
+- pages
+  - home
+  - notFound
+  - welcome
+- settings
+  - flowbite
+    - parts
+- vite
+- utils

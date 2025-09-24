@@ -1,5 +1,4 @@
 // Imports
-import custum from "../../settings/tailwind/custum"
 import utils from "../../utils/"
 import { useNavigate } from "react-router-dom"
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa"
@@ -23,9 +22,9 @@ function App() {
           {utils.translate.use("pages.welcome.main.message.0")}
         </p>
 
-        <button onClick={handle} className={custum.button("white")}>
+        <Button onClick={handle} color="light">
           {utils.translate.use("pages.welcome.main.start")}
-        </button>
+        </Button>
       </section>
 
       <section className="mb-20 max-w-5xl mx-auto px-4">
@@ -127,21 +126,10 @@ function App() {
           {utils.translate.use("pages.welcome.main.message.1")}
         </p>
 
-        <button onClick={handle} className={custum.button("white")}>
+        <Button onClick={handle} color="light">
           {utils.translate.use("pages.welcome.main.start")}
-        </button>
+        </Button>
       </section>
-
-      <div className="flex flex-wrap gap-2">
-        <Button>Default</Button>
-        <Button color="alternative">Alternative</Button>
-        <Button color="dark">Dark</Button>
-        <Button color="light">Light</Button>
-        <Button color="green">Green</Button>
-        <Button color="red">Red</Button>
-        <Button color="yellow">Yellow</Button>
-        <Button color="purple">Purple</Button>
-      </div>
 
       <footer className="bg-black bg-opacity-30 py-10 mt-auto">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm">

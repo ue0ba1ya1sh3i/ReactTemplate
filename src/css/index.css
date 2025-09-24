@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color_50: #f9fafb;
+  --color_100: #f3f4f6;
+  --color_200: #e5e7eb;
+  --color_300: #d1d5db;
+  --color_400: #9ca3af;
+  --color_500: #6b7280;
+  --color_600: #4b5563;
+  --color_700: #374151;
+  --color_800: #1f2937;
+  --color_900: #111827;
+  --color_950: #030712;
+}
