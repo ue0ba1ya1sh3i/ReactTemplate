@@ -82,6 +82,7 @@ const index = async () => {
 
     // LICENSE 削除
     if (fs.existsSync("./LICENSE")) fs.unlinkSync("./LICENSE")
+    if (fs.existsSync("./README_japanese.md")) fs.unlinkSync("./README_japanese.md")
   } catch (err) {
     colorLog(`Error: ${err.message}`, "red")
     readline.close()
