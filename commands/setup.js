@@ -4,14 +4,16 @@ import { stdin as input, stdout as output } from "node:process"
 import figlet from "figlet"
 
 // Setup
-const rl = readline.createInterface({ input, output })
+const readline = readline.createInterface({ input, output })
+
+const br = (times = 1) => process.stdout.write("\n".repeat(times))
+
+const ask = (question) => new Promise((resolve) => readline.question(question, resolve))
 
 const colorLog = (text, color) => {
   const colors = { red: "\x1b[31m", green: "\x1b[32m", yellow: "\x1b[33m" }
   console.log(`${colors[color] || "\x1b[0m"}${text}\x1b[0m`)
 }
-
-const br = (times = 1) => process.stdout.write("\n".repeat(times))
 
 const logBox = (...lines) => {
   const width = Math.max(...lines.map((l) => l.length))
@@ -26,12 +28,7 @@ const logBox = (...lines) => {
   colorLog(bottom, "green")
 }
 
-// ユーザー入力
-const ask = (question) => new Promise((resolve) => rl.question(question, resolve))
-
-// メイン処理
 const index = async () => {
-  // ロゴ
   br()
   const logo = figlet.textSync("Setup center", { font: "Standard" })
   colorLog(logo, "yellow")
@@ -40,7 +37,6 @@ const index = async () => {
   console.log("Please answer the following questions to set up your project.")
   br()
 
-  // 質問リスト
   const questions = [
     { key: "title", prompt: "Input app title: " },
     { key: "short_title", prompt: "Input app short title: " },
@@ -50,12 +46,13 @@ const index = async () => {
   ]
 
   const answers = {}
+
   for (const q of questions) {
     answers[q.key] = await ask(q.prompt)
   }
+
   br()
 
-  // package.json 読み込み＆書き込み
   try {
     const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"))
 
@@ -87,14 +84,13 @@ const index = async () => {
     if (fs.existsSync("./LICENSE")) fs.unlinkSync("./LICENSE")
   } catch (err) {
     colorLog(`Error: ${err.message}`, "red")
-    rl.close()
+    readline.close()
     return
   }
-
-  // 完了ログ
+  
   logBox("The project is roughly set up!", 'Run "npm run dev" to start developing.')
 
-  rl.close()
+  readline.close()
 }
 
 index()
