@@ -1,14 +1,15 @@
+// Library
 import fs from "node:fs"
 import readline from "node:readline"
 import { stdin as input, stdout as output } from "node:process"
 import figlet from "figlet"
 
 // Setup
-const readline = readline.createInterface({ input, output })
+const rl = readline.createInterface({ input, output })
 
+// Functons
 const br = (times = 1) => process.stdout.write("\n".repeat(times))
-
-const ask = (question) => new Promise((resolve) => readline.question(question, resolve))
+const ask = (question) => new Promise((resolve) => rl.question(question, resolve))
 
 const colorLog = (text, color) => {
   const colors = { red: "\x1b[31m", green: "\x1b[32m", yellow: "\x1b[33m" }
@@ -16,26 +17,26 @@ const colorLog = (text, color) => {
 }
 
 const logBox = (...lines) => {
+  // Values
   const width = Math.max(...lines.map((l) => l.length))
   const top = "┌" + "─".repeat(width + 2) + "┐"
   const bottom = "└" + "─".repeat(width + 2) + "┘"
 
+  // Log
   colorLog(top, "green")
+
   lines.forEach((line) => {
     const space = " ".repeat(width - line.length)
     colorLog(`│ ${line}${space} │`, "green")
   })
+
   colorLog(bottom, "green")
 }
 
+// Main
 const index = async () => {
-  br()
-  const logo = figlet.textSync("Setup center", { font: "Standard" })
-  colorLog(logo, "yellow")
-  br()
-  console.log("Welcome to the Template setup center!")
-  console.log("Please answer the following questions to set up your project.")
-  br()
+  // Values
+  let answers = {}
 
   const questions = [
     { key: "title", prompt: "Input app title: " },
@@ -45,14 +46,23 @@ const index = async () => {
     { key: "version", prompt: "Input app version: " }
   ]
 
-  const answers = {}
+  // Messages
+  br()
+  const logo = figlet.textSync("Setup center", { font: "Standard" })
+  colorLog(logo, "yellow")
+  br()
+  console.log("Welcome to the Template setup center!")
+  console.log("Please answer the following questions to set up your project.")
+  br()
 
+  // Questions
   for (const q of questions) {
     answers[q.key] = await ask(q.prompt)
   }
 
   br()
 
+  // Set files
   try {
     const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"))
 
@@ -85,13 +95,13 @@ const index = async () => {
     if (fs.existsSync("./README_japanese.md")) fs.unlinkSync("./README_japanese.md")
   } catch (err) {
     colorLog(`Error: ${err.message}`, "red")
-    readline.close()
+    rl.close()
     return
   }
   
   logBox("The project is roughly set up!", 'Run "npm run dev" to start developing.')
 
-  readline.close()
+  rl.close()
 }
 
 index()

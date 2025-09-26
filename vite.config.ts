@@ -6,7 +6,7 @@ import react from "@vitejs/plugin-react-swc"
 import { VitePWA } from "vite-plugin-pwa"
 
 export default defineConfig(({ mode }) => {
-  // Constant
+  // Value
   const env = loadEnv(mode, process.cwd(), "")
 
   // Environments
@@ -26,9 +26,11 @@ export default defineConfig(({ mode }) => {
           chunkFileNames: "assets/[name].[hash].js",
           entryFileNames: "assets/[name].[hash].js",
 
-          manualChunks(id) {
+          manualChunks(id: string) {
             if (id.includes("node_modules")) {
               return "librarys"
+            } else {
+              throw new Error("node_module not found")
             }
           }
         }
