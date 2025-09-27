@@ -3,10 +3,13 @@ import { createRoot } from "react-dom/client"
 import { StrictMode, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-// CSS
-import { customTheme } from "./features/flowbite"
-import "./assets/css/index.css"
+// Settings
+import { customTheme } from "@/features/flowbite"
 
+// File
+import "@/assets/css/index.css"
+
+// Code
 import "@/library/i18next"
 
 // Components
