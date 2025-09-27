@@ -4,12 +4,14 @@ import { StrictMode, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // CSS
-import { customTheme } from "./settings/flowbite"
-import "./css/index.css"
+import { customTheme } from "./features/flowbite"
+import "./assets/css/index.css"
+
+import "@/library/i18next"
 
 // Components
 import { Home, NotFound, Welcome } from "./pages"
-import { FirstVisit } from "./components"
+import { FirstVisit } from "./features/firstVisit"
 import { ThemeProvider } from "flowbite-react"
 
 const AppSettings = ({ children }: { children: React.ReactNode }) => {

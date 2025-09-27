@@ -16,7 +16,7 @@
 |-|-|
 | 言語 | JavaScript, HTML, CSS, TypeScript |
 | フレームワーク | Node.js, React, Tailwind CSS, Flowbite |
-| サービス | GitHub, Firebase, Google Analytics, Google Search Console |
+| サービス | Firebase, Google Analytics, Google Search Console |
 | ツール | Vite |
 
 ## 使い方
@@ -27,5 +27,5 @@
 - `npm run hosting`でビルドしたプログラムを簡単にFirebase Hostingにアップロード可能
 
 ## コードルール
-- お手数ですが以下のリンクからお読みください
+- 以下のリンクからお読みください
 - [GitHub](https://github.com/ue0ba1ya1sh3i/ue0ba1ya1sh3i/blob/main/rules/japanese.md)

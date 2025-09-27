@@ -1,20 +1,26 @@
-// Library
 import { defineConfig, loadEnv } from "vite"
+import path from "path"
 
 // Plugins
 import react from "@vitejs/plugin-react-swc"
 import { VitePWA } from "vite-plugin-pwa"
 
 export default defineConfig(({ mode }) => {
-  // Value
   const env = loadEnv(mode, process.cwd(), "")
 
   // Environments
-  const VITE_TITLE = env.VITE_TITLE || "Template"
-  const VITE_SHORT_TITLE = env.VITE_SHORT_TITLE || "Template"
-  const VITE_DESCRIPTION = env.VITE_DESCRIPTION || "This is my unique template"
+  const title = env.VITE_TITLE || "Template"
+  const short_title = env.VITE_SHORT_TITLE || "Template"
+  const description = env.VITE_DESCRIPTION || "This is my unique template"
+  const google_serch_id = env.VITE_GOOGLE_SERCH_ID || "e8NVKf0_iFGhrZwPdG0593cOyZ4UexL5m9N-ILjvCOY"
 
   return {
+    resolve: { 
+      alias: {
+        "@": path.resolve(__dirname, "src")
+      }
+    },
+
     build: {
       chunkSizeWarningLimit: 500,
       minify: "terser",
@@ -29,8 +35,6 @@ export default defineConfig(({ mode }) => {
           manualChunks(id: string) {
             if (id.includes("node_modules")) {
               return "librarys"
-            } else {
-              throw new Error("node_module not found")
             }
           }
         }
@@ -50,14 +54,25 @@ export default defineConfig(({ mode }) => {
       react(),
 
       {
-        name: "settings_html",
+        name: "html",
+
         transformIndexHtml(html) {
+          html.replace(
+            /<title>.*<\/title>/, 
+            `<title>${title}</title>`
+          )
+          
+          .replace(
+            /<meta name="description" content=".*">/,
+            `<meta name="description" content="${description}">`
+          )
+
+          .replace(
+            /<meta name="google-site-verification" content=".*">/,
+            `<meta name="google-site-verification" content="${google_serch_id}">`
+          )
+
           return html
-            .replace(/<title>.*<\/title>/, `<title>${VITE_TITLE}</title>`)
-            .replace(
-              /<meta name="description" content=".*">/,
-              `<meta name="description" content="${VITE_DESCRIPTION}">`
-            )
         }
       },
 
@@ -69,12 +84,15 @@ export default defineConfig(({ mode }) => {
           enabled: false
         },
 
-        includeAssets: ["favicons/*", "index.html"],
+        includeAssets: [
+          "favicons/*", 
+          "index.html"
+        ],
 
         manifest: {
-          name: VITE_TITLE,
-          short_name: VITE_SHORT_TITLE,
-          description: VITE_DESCRIPTION,
+          name: title,
+          short_name: short_title,
+          description: description,
           start_url: "/",
           scope: "/",
           display: "standalone",
@@ -84,23 +102,23 @@ export default defineConfig(({ mode }) => {
 
           icons: [
             {
-              purpose: "any maskable",
+              purpose: "any",
               sizes: "96x96",
-              src: "/favicons/96.png",
+              src: "/favicons/any_96.png",
               type: "image/png"
             },
 
             {
-              purpose: "any maskable",
+              purpose: "any",
               sizes: "192x192",
-              src: "/favicons/192.png",
+              src: "/favicons/any_192.png",
               type: "image/png"
             },
 
             {
-              purpose: "any maskable",
+              purpose: "any",
               sizes: "512x512",
-              src: "/favicons/512.png",
+              src: "/favicons/any_512.png",
               type: "image/png"
             }
           ]
@@ -109,7 +127,11 @@ export default defineConfig(({ mode }) => {
         workbox: {
           cleanupOutdatedCaches: true,
           globPatterns: ["**/*"],
-          globIgnores: ["sw.js", "workbox-*.js", "**/*.{map,mp4,zip,mp3,pdf}"],
+
+          globIgnores: [
+            "sw.js", 
+            "workbox-*.js"
+          ],
         }
       })
     ]

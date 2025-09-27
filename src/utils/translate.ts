@@ -1,14 +1,7 @@
-// Library
-import i18next from "../settings/translate"
-import { TOptions } from "i18next"
+import i18next from "../library/i18next"
 
-const use = (key: string, options?: TOptions) => {
-  return i18next.t(key, options)
-}
-
-const set = (language: "ja" | "en") => {
-  localStorage.setItem("language", language)
+const setTranslate = (language: string) => {
   i18next.changeLanguage(language)
 }
 
-export { use, set }
+export { setTranslate }

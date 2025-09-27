@@ -1,10 +1,9 @@
-// Library
+// Import
 import fs from "node:fs"
 import readline from "node:readline"
 import { stdin as input, stdout as output } from "node:process"
 import figlet from "figlet"
 
-// Setup
 const rl = readline.createInterface({ input, output })
 
 // Functons
@@ -43,7 +42,8 @@ const index = async () => {
     { key: "short_title", prompt: "Input app short title: " },
     { key: "description", prompt: "Input app description: " },
     { key: "author", prompt: "Input author name: " },
-    { key: "version", prompt: "Input app version: " }
+    { key: "version", prompt: "Input app version: " },
+    { key: "google_serch_id", prompt: "Input google serch id" }
   ]
 
   // Messages

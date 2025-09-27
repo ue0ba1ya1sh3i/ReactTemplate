@@ -1,13 +1,14 @@
-import utils from "./"
+import { useTranslate } from "@/hooks/translate"
 
-const set = (name: string) => {
+const setTitle = (name: string) => {
+  const { translate } = useTranslate()
   const path = `pages.${name}.title`
 
-  document.title = `${import.meta.env.VITE_TITLE} | ${utils.translate.use(path)}`
+  document.title = `${import.meta.env.VITE_TITLE} | ${translate(path)}`
 }
 
-const use = () => {
+const viewTitle = () => {
   return import.meta.env.VITE_TITLE
 }
 
-export { set, use }
+export { setTitle, viewTitle }
