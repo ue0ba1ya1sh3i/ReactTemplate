@@ -11,7 +11,12 @@ const br = (times = 1) => process.stdout.write("\n".repeat(times))
 const ask = (question) => new Promise((resolve) => rl.question(question, resolve))
 
 const colorLog = (text, color) => {
-  const colors = { red: "\x1b[31m", green: "\x1b[32m", yellow: "\x1b[33m" }
+  const colors = { 
+    red: "\x1b[31m", 
+    green: "\x1b[32m", 
+    yellow: "\x1b[33m" 
+  }
+
   console.log(`${colors[color] || "\x1b[0m"}${text}\x1b[0m`)
 }
 
@@ -34,7 +39,7 @@ const logBox = (...lines) => {
 
 // Main
 const index = async () => {
-  // Values
+  //Values
   let answers = {}
 
   const questions = [
@@ -73,8 +78,7 @@ const index = async () => {
     pkg.license = undefined
 
     fs.writeFileSync("./package.json", JSON.stringify(pkg, null, 2), "utf-8")
-
-    // .env 作成
+    
     const envVars = {
       VITE_TITLE: answers.title,
       VITE_SHORT_TITLE: answers.short_title,
