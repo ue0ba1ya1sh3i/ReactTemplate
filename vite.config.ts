@@ -10,10 +10,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "")
 
   // Environments
-  const title = env.VITE_TITLE || "Template"
-  const short_title = env.VITE_SHORT_TITLE || "Template"
-  const description = env.VITE_DESCRIPTION || "This is my unique template"
-  const google_serch_id = env.VITE_GOOGLE_SERCH_ID || "e8NVKf0_iFGhrZwPdG0593cOyZ4UexL5m9N-ILjvCOY"
+  const title = env.VITE_TITLE || "React Template"
+  const short_title = env.SHORT_TITLE || "Template"
+  const description = env.DESCRIPTION || "Simple and consistent template"
 
   return {
     resolve: { 
@@ -66,11 +65,6 @@ export default defineConfig(({ mode }) => {
           .replace(
             /<meta name="description" content=".*">/,
             `<meta name="description" content="${description}">`
-          )
-
-          .replace(
-            /<meta name="google-site-verification" content=".*">/,
-            `<meta name="google-site-verification" content="${google_serch_id}">`
           )
 
           return html

@@ -9,3 +9,4 @@
 
 # 課題
 - sentryの導入(ログやエラー)
+- github issuesと統一
