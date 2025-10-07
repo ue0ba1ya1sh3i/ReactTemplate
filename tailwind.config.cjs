@@ -4,7 +4,6 @@ const settings = {
   darkMode: "class",
 
   content: [
-    "./index.html", 
     "./src/**/*.{ts,tsx}"
   ],
 

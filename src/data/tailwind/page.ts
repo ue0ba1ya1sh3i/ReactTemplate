@@ -1,4 +1,4 @@
-{
+const data = {
   "normal": {
     "root": "min-h-[100dvh] flex flex-col gap-20"
   },
@@ -7,3 +7,5 @@
     "root": "bg-gradient-to-r from-blue-400 to-purple-400 text-white"
   }
 }
+
+export default data

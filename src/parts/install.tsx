@@ -1,27 +1,24 @@
 import { useEffect, useState } from "react";
+import Button from "@/parts/button";
 
-export default function InstallButton() {
+type ButtonProps = { color?: string };
+
+export default function InstallButton({ color = "white.hover", ...props }: ButtonProps) {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    // すでにインストール済みかチェック
     if (window.matchMedia("(display-mode: standalone)").matches) {
       setIsInstalled(true);
     }
 
-    // beforeinstallprompt イベントをキャッチ
     const handler = (e: Event) => {
       e.preventDefault();
-      // 型アサーションで BeforeInstallPromptEvent として扱う
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
-
     window.addEventListener("beforeinstallprompt", handler);
 
-    // インストール完了を検知
     const installedHandler = () => {
-      console.log("PWAがインストールされました！");
       setIsInstalled(true);
       setDeferredPrompt(null);
     };
@@ -37,7 +34,6 @@ export default function InstallButton() {
     if (!deferredPrompt) return;
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    console.log(`ユーザーの選択: ${outcome}`);
     if (outcome === "accepted") {
       setDeferredPrompt(null);
     }
@@ -46,13 +42,13 @@ export default function InstallButton() {
   if (isInstalled || !deferredPrompt) return null;
 
   return (
-    <button onClick={handleInstall} className="px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+    <Button color={color} onClick={handleInstall} {...props}>
       アプリをインストール
-    </button>
-  )
+    </Button>
+  );
 }
 
-// 型定義 (tsconfigでdomタイプが有効なら不要)
+// 型定義
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
   readonly userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;

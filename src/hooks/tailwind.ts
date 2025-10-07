@@ -1,9 +1,10 @@
-import page from "@/assets/json/tailwind/page.json"
-import parts from "@/assets/json/tailwind/parts.json"
-import unit from "@/assets/json/tailwind/unit.json"
-import color from "@/assets/json/tailwind/color.json"
+import page from "@/data/tailwind/page"
+import parts from "@/data/tailwind/parts"
+import unit from "@/data/tailwind/unit"
+import color from "@/data/tailwind/color"
+import template from "@/data/tailwind/template"
 
-const sources = { page, parts, unit, color } as const
+const sources = { page, parts, unit, color, template } as const
 
 const getNested = (obj: any, path: string): any => {
   return path.split(".").reduce((cur, key) => {
@@ -23,17 +24,14 @@ const collectStrings = (val: any): string[] => {
 type GetArgs = Partial<Record<keyof typeof sources, string | string[]>>
 
 /**
- * get({...}) : 各JSON名をキーにしてドットパスを指定
- * 例：
- * get({
- *   page: "normal.root.color",
- *   parts: ["red.lg", "footer.bg"],
- *   unit: "p.ps"
- * })
+ * get(args, extraClasses)
+ * - args: 各JSONのキーを指定してドットパスを取得
+ * - extraClasses: 個別に追加したいクラス文字列 or 配列
  */
-const get = (args: GetArgs): string => {
+const get = (args: GetArgs, extraClasses?: string | string[]): string => {
   const collectedTokens: string[] = []
 
+  // JSONからのクラスを収集
   for (const [sourceKey, pathOrPaths] of Object.entries(args)) {
     const source = (sources as any)[sourceKey]
     if (!source) continue
@@ -43,6 +41,16 @@ const get = (args: GetArgs): string => {
       const val = getNested(source, path)
       const tokens = collectStrings(val).flatMap((v) => v.split(/\s+/))
       for (const t of tokens) if (t) collectedTokens.push(t)
+    }
+  }
+
+  // 第2引数の個人的なクラスを追加
+  if (extraClasses) {
+    const extras = Array.isArray(extraClasses) ? extraClasses : [extraClasses]
+    for (const cls of extras) {
+      cls.split(/\s+/).forEach((t) => {
+        if (t) collectedTokens.push(t)
+      })
     }
   }
 

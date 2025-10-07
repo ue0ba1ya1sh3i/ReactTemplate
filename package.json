@@ -1,11 +1,11 @@
 {
-  "name": "template",
+  "name": "react-template",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "author": "Arata Uebayashi",
-  "description": "Simple template",
+  "description": "Simple and consistent template",
   "scripts": {
     "format": "prettier --write '**/*.{ts,tsx,js,json,css,md,html,cjs}'",
     "setup": "node ./commands/setup.js",

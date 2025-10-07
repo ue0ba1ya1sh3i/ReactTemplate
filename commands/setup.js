@@ -47,8 +47,7 @@ const index = async () => {
     { key: "short_title", prompt: "Input app short title: " },
     { key: "description", prompt: "Input app description: " },
     { key: "author", prompt: "Input author name: " },
-    { key: "version", prompt: "Input app version: " },
-    { key: "google_serch_id", prompt: "Input google serch id" }
+    { key: "version", prompt: "Input app version: " }
   ]
 
   // Messages

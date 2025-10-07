@@ -5,17 +5,15 @@ import InstallButton from "@/parts/install"
 
 import { setTitle, viewTitle } from "@/utils/title"
 import tailwindget from "@/hooks/tailwind"
+import Button from "@/parts/button"
 
 import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa"
 
 function App() {
-  const classes = tailwindget({
-    page: "normal.root",
-    parts: "button",
-    unit: "px.page"
-  });
 
-  console.log(classes);
+  const footer = tailwindget({
+    color: "black.opacity"
+  }, "py-10")
 
   const name = "welcome"
   setTitle(name)
@@ -28,13 +26,14 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-400 text-white gap-20 flex flex-col">
-      <InstallButton />
-
+    <div className={tailwindget({ page: ["normal.root", `${name}.root`] })}>
       <section className="flex h-[100dvh] flex-col items-center justify-center px-4 gap-5">
         <p className="text-center text-5xl font-bold break-all">{viewTitle()}</p>
         <p className="text-center text-3xl break-all">{translate(`pages.${name}.main.message.0`)}</p>
-        <button onClick={handle} className="rounded-lg bg-white px-4 py-3 text-black transition hover:bg-white/70">{translate(`pages.${name}.main.start`)}</button>
+        <div className="flex gap-3">
+          <Button color="white.hover" onClick={handle}>{translate(`pages.${name}.main.start`)}</Button>
+          <InstallButton color="white.hover" />
+        </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 gap-5 flex flex-col">
@@ -93,12 +92,15 @@ function App() {
         </div>
       </section>
 
-      <section className="mx-auto flex h-[50dvh] max-w-5xl flex-col items-center justify-center p-5 px-4">
-        <p className="mb-10 text-center text-3xl font-bold break-all">{translate(`pages.${name}.main.message.1`)}</p>
-        <button onClick={handle} className="rounded-lg bg-white px-4 py-3 text-black transition hover:bg-white/70">{translate(`pages.${name}.main.start`)}</button>
+      <section className="mx-auto flex h-[50dvh] max-w-5xl flex-col items-center justify-center p-5 px-4 gap-5">
+        <p className="text-center text-3xl font-bold break-all">{translate(`pages.${name}.main.message.1`)}</p>
+        <div className="flex gap-3">
+          <Button color="white.hover" onClick={handle}>{translate(`pages.${name}.main.start`)}</Button>
+          <InstallButton color="white.hover" />
+        </div>
       </section>
 
-      <footer className="mt-auto bg-black/30 py-10">
+      <footer className={footer}>
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between px-4 text-sm md:flex-row">
           <p className="mb-5 text-center text-sm break-all md:mb-0">&copy; {new Date().getFullYear()} {import.meta.env.VITE_AUTHOR} {viewTitle()}. All rights reserved.</p>
 
