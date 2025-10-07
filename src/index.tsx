@@ -3,9 +3,6 @@ import { createRoot } from "react-dom/client"
 import { StrictMode, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-// Settings
-import { customTheme } from "@/features/flowbite"
-
 // File
 import "@/assets/css/index.css"
 
@@ -15,16 +12,13 @@ import "@/library/i18next"
 // Components
 import { Home, NotFound, Welcome } from "./pages"
 import { FirstVisit } from "./features/firstVisit"
-import { ThemeProvider } from "flowbite-react"
 
 const AppSettings = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <ThemeProvider theme={customTheme}>
-        <FirstVisit>
-          {children}
-        </FirstVisit>
-      </ThemeProvider>
+      <FirstVisit>
+        {children}
+      </FirstVisit>
     </>
   )
 }

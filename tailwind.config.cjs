@@ -1,15 +1,11 @@
 /** @type {import("tailwindcss").Config} */
 
-const flowbiteReact = require("flowbite-react/plugin/tailwindcss");
-
 const settings = {
   darkMode: "class",
-  plugins: [flowbiteReact],
 
   content: [
     "./index.html", 
-    "./src/**/*.{ts,tsx}", 
-    ".flowbite-react/class-list.json"
+    "./src/**/*.{ts,tsx}"
   ],
 
   theme: {
