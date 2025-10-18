@@ -10,9 +10,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    // Custum
+    // Set alias
     "baseUrl": ".",
-    
     "paths": {
       "@/*": ["src/*"]
     },

@@ -11,10 +11,10 @@ const br = (times = 1) => process.stdout.write("\n".repeat(times))
 const ask = (question) => new Promise((resolve) => rl.question(question, resolve))
 
 const colorLog = (text, color) => {
-  const colors = { 
-    red: "\x1b[31m", 
-    green: "\x1b[32m", 
-    yellow: "\x1b[33m" 
+  const colors = {
+    red: "\x1b[31m",
+    green: "\x1b[32m",
+    yellow: "\x1b[33m"
   }
 
   console.log(`${colors[color] || "\x1b[0m"}${text}\x1b[0m`)
@@ -77,14 +77,14 @@ const index = async () => {
     pkg.license = undefined
 
     fs.writeFileSync("./package.json", JSON.stringify(pkg, null, 2), "utf-8")
-    
+
     const envVars = {
       VITE_TITLE: answers.title,
       VITE_SHORT_TITLE: answers.short_title,
       VITE_DESCRIPTION: answers.description,
       VITE_AUTHOR: answers.author
     }
-    
+
     fs.writeFileSync(
       ".env",
       Object.entries(envVars)
@@ -101,7 +101,7 @@ const index = async () => {
     rl.close()
     return
   }
-  
+
   logBox("The project is roughly set up!", 'Run "npm run dev" to start developing.')
 
   rl.close()

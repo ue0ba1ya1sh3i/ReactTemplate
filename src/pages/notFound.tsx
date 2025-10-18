@@ -6,7 +6,7 @@ function App() {
   const { translate } = useTranslate()
   const name = "notFound"
 
-  setTitle(name)  
+  setTitle(name)
 
   return <>{translate(`pages.${name}.title`)}</>
 }

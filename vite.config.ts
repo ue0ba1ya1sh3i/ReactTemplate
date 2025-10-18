@@ -7,15 +7,34 @@ import react from "@vitejs/plugin-react-swc"
 import { VitePWA } from "vite-plugin-pwa"
 
 export default defineConfig(({ mode }) => {
+  // Set variable
   const env = loadEnv(mode, process.cwd(), "")
+  const requiredVars = [
+    "VITE_TITLE",
+    "VITE_AUTHOR",
+    "SHORT_TITLE",
+    "DESCRIPTION",
+    "THEME_COLOR",
+    "BACKGROUND_COLOR"
+  ]
 
-  // Environments
-  const title = env.VITE_TITLE || "React Template"
-  const short_title = env.SHORT_TITLE || "Template"
-  const description = env.DESCRIPTION || "Simple and consistent template"
+  // Check missing
+  const env_miss = requiredVars.filter((k) => !env[k])
+  if (env_miss.length > 0) {
+    throw new Error(`Missing environment variables:\n${env_miss.join("\n")}`)
+  }
+
+  // Set environment variable
+  const {
+    VITE_TITLE: title,
+    SHORT_TITLE: short_title,
+    DESCRIPTION: description,
+    THEME_COLOR: theme_color,
+    BACKGROUND_COLOR: background_color
+  } = env
 
   return {
-    resolve: { 
+    resolve: {
       alias: {
         "@": path.resolve(__dirname, "src")
       }
@@ -57,15 +76,13 @@ export default defineConfig(({ mode }) => {
         name: "html",
 
         transformIndexHtml(html) {
-          html.replace(
-            /<title>.*<\/title>/, 
-            `<title>${title}</title>`
-          )
-          
-          .replace(
-            /<meta name="description" content=".*">/,
-            `<meta name="description" content="${description}">`
-          )
+          html
+            .replace(/<title>.*<\/title>/, `<title>${title}</title>`)
+
+            .replace(
+              /<meta name="description" content=".*">/,
+              `<meta name="description" content="${description}">`
+            )
 
           return html
         }
@@ -79,10 +96,7 @@ export default defineConfig(({ mode }) => {
           enabled: false
         },
 
-        includeAssets: [
-          "favicons/*", 
-          "index.html"
-        ],
+        includeAssets: ["favicons/*", "index.html"],
 
         manifest: {
           name: title,
@@ -92,8 +106,8 @@ export default defineConfig(({ mode }) => {
           scope: "/",
           display: "standalone",
           orientation: "any",
-          theme_color: "#E5E7EB",
-          background_color: "#E5E7EB",
+          theme_color: `#${theme_color}`,
+          background_color: `#${background_color}`,
 
           icons: [
             {
@@ -123,10 +137,7 @@ export default defineConfig(({ mode }) => {
           cleanupOutdatedCaches: true,
           globPatterns: ["**/*"],
 
-          globIgnores: [
-            "sw.js", 
-            "workbox-*.js"
-          ],
+          globIgnores: ["sw.js", "workbox-*.js"]
         }
       })
     ]

@@ -16,9 +16,7 @@ import { FirstVisit } from "./features/firstVisit"
 const AppSettings = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <FirstVisit>
-        {children}
-      </FirstVisit>
+      <FirstVisit>{children}</FirstVisit>
     </>
   )
 }

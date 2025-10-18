@@ -12,14 +12,17 @@ const resources = {
   en: { translation: english }
 }
 
-i18next.use(languageDetector).use(initReactI18next).init({
-  resources,
-  fallbackLng: ["en", "ja"],
-  interpolation: { escapeValue: false },
-  detection: {
-    caches: ["localstorage"],
-    order: ["localStorage", "navigator"]
-  }
-})
+i18next
+  .use(languageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: ["en", "ja"],
+    interpolation: { escapeValue: false },
+    detection: {
+      caches: ["localstorage"],
+      order: ["localStorage", "navigator"]
+    }
+  })
 
 export default i18next
